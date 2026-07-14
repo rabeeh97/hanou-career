@@ -1,6 +1,6 @@
 # Hanou Career Coach
 
-Sibling project to [Hano](../Hano): helps **Mohamad Fares Hanou** get hired as a physician in Germany with Berufserlaubnis (no Approbation yet).
+Sibling project to [Hano](../Hano): helps **Mohammad Fares Hanou** get hired as a physician in Germany with Berufserlaubnis (no Approbation yet).
 
 ## What it does
 
@@ -9,6 +9,12 @@ Sibling project to [Hano](../Hano): helps **Mohamad Fares Hanou** get hired as a
 3. **BE-aware ranking** — surfaces openings where he is a strong, honest match.
 4. **Per-job tailored CVs** + concrete gap notes.
 5. **HTML dashboard** — links each job to its CV PDF and recommendations.
+
+## Share the dashboard
+
+Live site: **https://rabeeh97.github.io/hanou-career/**
+
+Anyone with the link can browse recommendations, download CV PDFs, and open job ads (**Anzeige**). The site is public.
 
 ## Quick start
 

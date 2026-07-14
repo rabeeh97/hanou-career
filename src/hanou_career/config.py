@@ -22,10 +22,12 @@ class Settings(BaseSettings):
     )
 
     hano_database_url: str = "postgresql+psycopg://hano:hano@localhost:5432/hano"
-    hanou_online_max_pages: int = 2
-    hanou_top_n: int = 25
+    hanou_online_max_pages: int = 3
+    hanou_top_n: int = 100
+    hanou_region: str = "Niedersachsen"
     hanou_serve_host: str = "127.0.0.1"
     hanou_serve_port: int = 8765
+    hanou_jsonl_limit: int = 5000
 
 
 @lru_cache

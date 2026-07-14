@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "hanou-career"
 version = "0.1.0"
-description = "Career coach for Mohamad Fares Hanou: master + tailored CVs, BE-aware job ranking, HTML dashboard."
+description = "Career coach for Mohammad Fares Hanou: master + tailored CVs, BE-aware job ranking, HTML dashboard."
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }

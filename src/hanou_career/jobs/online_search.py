@@ -1,4 +1,7 @@
-"""Fresh online job search (Arbeitsagentur API) + manual URL inbox."""
+"""Fresh online job search (Arbeitsagentur API) + manual URL inbox.
+
+Primary focus: Niedersachsen Assistenzarzt / Geriatrie / Reha / Innere.
+"""
 
 from __future__ import annotations
 
@@ -17,19 +20,34 @@ logger = logging.getLogger(__name__)
 
 API_BASE = "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v4/jobs"
 PUBLIC_API_KEY = "jobboerse-jobsuche"
+NI = "Niedersachsen"
 
-# Queries tuned for Hanou: BE-eligible clinical / Geriatrie / Reha / Innere.
+# Heavy Niedersachsen coverage + a few Germany-wide BE queries (later filtered to NI).
 SEARCH_QUERIES: list[tuple[str, str | None]] = [
-    ("Assistenzarzt Geriatrie", None),
-    ("Assistenzarzt Geriatrie", "Niedersachsen"),
-    ("Assistenzarzt Innere Medizin", None),
-    ("Assistenzarzt Innere Medizin", "Niedersachsen"),
-    ("Assistenzarzt Reha", None),
-    ("Arzt geriatrische Rehabilitation", None),
-    ("Assistenzarzt Orthopädie", None),
+    ("Assistenzarzt Geriatrie", NI),
+    ("Assistenzarzt Innere Medizin", NI),
+    ("Assistenzarzt Reha", NI),
+    ("Assistenzarzt Rehabilitation", NI),
+    ("Arzt geriatrische Rehabilitation", NI),
+    ("Assistenzarzt Orthopädie", NI),
+    ("Assistenzarzt Unfallchirurgie", NI),
+    ("Assistenzarzt Berufserlaubnis", NI),
+    ("Arzt Berufserlaubnis", NI),
+    ("Arzt Anerkennung", NI),
+    ("Hospitation Arzt", NI),
+    ("Hospitation Geriatrie", NI),
+    ("Assistenzarzt Neurologie", NI),
+    ("Assistenzarzt Kardiologie", NI),
+    ("Oberarzt Geriatrie", NI),  # filtered down by ranker but captures mixed ads
+    ("Assistenzarzt", "Bad Harzburg"),
+    ("Assistenzarzt", "Goslar"),
+    ("Assistenzarzt", "Braunschweig"),
+    ("Assistenzarzt", "Göttingen"),
+    ("Assistenzarzt", "Hannover"),
+    ("Assistenzarzt", "Hildesheim"),
+    ("Assistenzarzt", "Oldenburg"),
+    ("Assistenzarzt Geriatrie", None),  # nationwide, NI filter later
     ("Assistenzarzt Berufserlaubnis", None),
-    ("Arzt Anerkennung Berufserlaubnis", None),
-    ("Hospitation Arzt Geriatrie", None),
 ]
 
 
@@ -45,10 +63,10 @@ def _payload_to_job(refnr: str, payload: dict[str, Any]) -> NormalizedJob | None
     ort = payload.get("arbeitsort") or {}
     city = ort.get("ort")
     bundesland = ort.get("region")
+    plz = ort.get("plz")
     employer = payload.get("arbeitgeber")
     posted = payload.get("aktuelleVeroeffentlichungsdatum") or payload.get("eintrittsdatum")
     posted_s = str(posted)[:10] if posted else None
-    # Short synthetic description from available JSON fields
     bits = [
         title,
         employer or "",
@@ -67,7 +85,7 @@ def _payload_to_job(refnr: str, payload: dict[str, Any]) -> NormalizedJob | None
             "description": description,
             "source": "online:arbeitsagentur",
             "posted_date": posted_s,
-            "raw": {"arbeitsagentur": payload},
+            "raw": {"arbeitsagentur": payload, "plz": plz},
         },
         default_source="online:arbeitsagentur",
     )
@@ -102,7 +120,6 @@ def search_arbeitsagentur(*, max_pages: int | None = None) -> list[NormalizedJob
                         refnr = p.get("refnr")
                         if not refnr or refnr in seen:
                             continue
-                        # Keep physician-ish titles only
                         title = (p.get("titel") or p.get("beruf") or "").lower()
                         if not any(
                             k in title

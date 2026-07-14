@@ -1,10 +1,11 @@
-"""BE-aware ranking for Mohamad Fares Hanou."""
+"""BE-aware ranking for Mohammad Fares Hanou (Niedersachsen-focused)."""
 
 from __future__ import annotations
 
 import re
 from typing import Any
 
+from hanou_career.jobs.geo import is_niedersachsen
 from hanou_career.jobs.schema import NormalizedJob, RankedJob
 
 TOKEN_RE = re.compile(r"[a-z0-9äöüß]{2,}", re.I)
@@ -43,11 +44,17 @@ GEO_BOOST = (
     "gottingen",
     "wolfenbüttel",
     "salzgitter",
-    "nordrhein",
-    "nrw",
-    "langenfeld",
-    "düsseldorf",
-    "dusseldorf",
+    "hannover",
+    "oldenburg",
+    "osnabrück",
+    "osnabruck",
+    "wolfsburg",
+    "celle",
+    "lüneburg",
+    "cuxhaven",
+    "holzminden",
+    "northeim",
+    "barsinghausen",
 )
 
 NEGATIVE_SENIORITY = (
@@ -90,7 +97,8 @@ def rank_jobs(
     jobs: list[NormalizedJob],
     *,
     candidate: dict[str, Any],
-    top_n: int = 25,
+    top_n: int = 100,
+    niedersachsen_only: bool = True,
 ) -> list[RankedJob]:
     skill_tokens = set()
     for s in candidate.get("skills") or []:
@@ -104,13 +112,26 @@ def rank_jobs(
     for r in candidate.get("preferred_regions") or []:
         preferred_flat |= _tokenize(str(r))
 
+    if niedersachsen_only:
+        scoped = [j for j in jobs if is_niedersachsen(j)]
+    else:
+        scoped = list(jobs)
+
     ranked: list[RankedJob] = []
-    for job in jobs:
+    for job in scoped:
         blob = job.text_blob()
-        score = 35
-        matched: list[str] = []
+        score = 40  # NI-scoped baseline
+        matched: list[str] = ["Niedersachsen"]
         risks: list[str] = []
         eligibility = "eligible"
+        if job.source.startswith("hano-jsonl:klinikradar") or job.title.startswith(
+            "Klinik-Ziel"
+        ):
+            score = 45  # useful leads, but below concrete Assistenzarzt ads
+            matched.append("Klinikradar-Lead")
+            risks.append(
+                "Klinikradar-Lead — aktive Stellenausschreibung auf Klinikseite prüfen."
+            )
 
         # Hard / soft licensing gates
         if job.requires_approbation is True and not job.accepts_berufserlaubnis:
@@ -188,6 +209,11 @@ def rank_jobs(
             risks.append("Vermittler-/Agentur-Anzeige — Klinik direkt prüfen.")
 
         score = int(max(0, min(100, score)))
+        if job.source.startswith("hano-jsonl:klinikradar") or job.title.startswith(
+            "Klinik-Ziel"
+        ):
+            # Keep clinic leads, but never above concrete job ads.
+            score = min(score, 52)
 
         bits = []
         if matched:
@@ -228,7 +254,20 @@ def rank_jobs(
 
     eligible = [r for r in deduped if r.eligibility != "blocked"]
     blocked = [r for r in deduped if r.eligibility == "blocked"]
-    selected = eligible[:top_n]
-    if len(selected) < min(5, top_n):
-        selected = (eligible + blocked)[:top_n]
+
+    def _is_klinikradar(r: RankedJob) -> bool:
+        return "klinikradar" in r.job.source or r.job.title.startswith("Klinik-Ziel")
+
+    concrete = [r for r in eligible if not _is_klinikradar(r)]
+    leads = [r for r in eligible if _is_klinikradar(r)]
+    lead_slots = min(20, max(0, top_n // 5), len(leads))
+    concrete_slots = top_n - lead_slots
+    selected = concrete[:concrete_slots] + leads[:lead_slots]
+    if len(selected) < top_n:
+        selected.extend(blocked[: top_n - len(selected)])
+    # Re-sort display: concrete jobs first by score, then klinikradar leads
+    selected.sort(
+        key=lambda r: (0 if _is_klinikradar(r) else 1, r.score),
+        reverse=True,
+    )
     return selected

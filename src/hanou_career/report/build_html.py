@@ -108,8 +108,8 @@ def build_index_html(ranked: list[RankedJob]) -> str:
 <body>
   <header class="hero">
     <p class="eyebrow">Hanou Career Coach</p>
-    <h1>Mohamad Fares Hanou</h1>
-    <p class="lede">Empfohlene Stellen mit Berufserlaubnis · Master- und Job-CVs · konkrete CV-Lücken</p>
+    <h1>Mohammad Fares Hanou</h1>
+    <p class="lede">Nur Niedersachsen · Berufserlaubnis · Master- und Job-CVs · konkrete CV-Lücken</p>
     <p class="actions hero-actions">
       <a class="btn" href="master_cv.pdf">Master-Lebenslauf</a>
       <a class="btn ghost" href="ranked.json">ranked.json</a>

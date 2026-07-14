@@ -22,7 +22,7 @@ from hanou_career.report.build_html import build_report
 
 app = typer.Typer(
     name="hanou-career",
-    help="Career coach for Mohamad Fares Hanou — CVs, job ranking, HTML dashboard.",
+    help="Career coach for Mohammad Fares Hanou — CVs, job ranking, HTML dashboard.",
     no_args_is_help=True,
 )
 console = Console()

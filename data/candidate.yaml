@@ -1,4 +1,4 @@
-full_name: Mohamad Fares Hanou
+full_name: Mohammad Fares Hanou
 email: mohamadhanou73@gmail.com
 phone: "+49 15739257493"
 street: Amsbergstraße 22
@@ -32,7 +32,12 @@ preferred_regions:
   - Niedersachsen
   - Bad Harzburg
   - Harz
-  - Nordrhein-Westfalen
+  - Goslar
+  - Braunschweig
+  - Göttingen
+  - Hannover
+  - Hildesheim
+  - Oldenburg
 
 skills:
   - Geriatrie

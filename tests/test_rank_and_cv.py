@@ -29,17 +29,29 @@ def test_rank_prefers_geriatrie_be() -> None:
             "description": "Berufserlaubnis erwünscht. Visite, Anamnese, Sonographie.",
         }
     )
+    nrw = from_mapping(
+        {
+            "url": "https://example.test/nrw",
+            "title": "Assistenzarzt Geriatrie",
+            "employer": "Klinik NRW",
+            "city": "Köln",
+            "bundesland": "Nordrhein-Westfalen",
+            "description": "Berufserlaubnis erwünscht. Geriatrie.",
+        }
+    )
     bad = from_mapping(
         {
             "url": "https://example.test/bad",
             "title": "Chefarzt Chirurgie",
             "employer": "Uni",
-            "city": "München",
+            "city": "Hannover",
+            "bundesland": "Niedersachsen",
             "description": "Approbation zwingend erforderlich. Keine Berufserlaubnis.",
         }
     )
-    assert good and bad
-    ranked = rank_jobs([good, bad], candidate=candidate, top_n=5)
+    assert good and nrw and bad
+    ranked = rank_jobs([good, nrw, bad], candidate=candidate, top_n=5)
+    assert all(r.job.url != "https://example.test/nrw" for r in ranked)
     assert ranked[0].job.title.startswith("Assistenzarzt")
     assert ranked[0].score > 50
 
@@ -49,7 +61,7 @@ def test_render_and_tailor(tmp_path: Path) -> None:
         "headline": "Arzt",
         "summary": "Summary",
         "contact": {
-            "name": "Mohamad Fares Hanou",
+            "name": "Mohammad Fares Hanou",
             "email": "a@b.c",
             "phone": "+49",
             "address": "Bad Harzburg",
@@ -73,6 +85,8 @@ def test_render_and_tailor(tmp_path: Path) -> None:
             "url": "https://example.test/j",
             "title": "Assistenzarzt Geriatrie",
             "employer": "Testklinik",
+            "city": "Goslar",
+            "bundesland": "Niedersachsen",
             "description": "Geriatrie Reha Sonographie Berufserlaubnis",
         }
     )
