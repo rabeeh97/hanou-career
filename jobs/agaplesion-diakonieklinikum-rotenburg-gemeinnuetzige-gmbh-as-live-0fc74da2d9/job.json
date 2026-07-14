@@ -1,0 +1,42 @@
+{
+  "score": 92,
+  "eligibility": "eligible",
+  "rationale": "Passend: Niedersachsen, Berufserlaubnis / Anerkennung-freundlich, assistenzarzt, weiterbildung, niedersachsen, Assistenzarzt-Titel Risiken: Senioritäts-Signal: chefarzt",
+  "matched": [
+    "Niedersachsen",
+    "Berufserlaubnis / Anerkennung-freundlich",
+    "assistenzarzt",
+    "weiterbildung",
+    "niedersachsen",
+    "Assistenzarzt-Titel"
+  ],
+  "risks": [
+    "Senioritäts-Signal: chefarzt"
+  ],
+  "gaps": [
+    "Im Anschreiben Berufserlaubnis (Restlaufzeit ~2 Jahre) und FSP früh erwähnen.",
+    "Stellenbezeichnung „Assistenzarzt (w/m/d) für unser Zentrum für Psychosoziale Medizin“ in Überschrift/Zusammenfassung der Bewerbung wörtlich aufnehmen.",
+    "Motivationssatz mit Bezug auf AGAPLESION DIAKONIEKLINIKUM ROTENBURG gemeinnützige GmbH und deren Schwerpunkt formulieren.",
+    "Keine Approbation erfinden; nicht als „approbierter Arzt“ bezeichnen."
+  ],
+  "job": {
+    "id": "live-0fc74da2d9",
+    "title": "Assistenzarzt (w/m/d) für unser Zentrum für Psychosoziale Medizin",
+    "employer": "AGAPLESION DIAKONIEKLINIKUM ROTENBURG gemeinnützige GmbH",
+    "location": "Rotenburg (Wümme), Niedersachsen",
+    "city": "Rotenburg (Wümme)",
+    "bundesland": "Niedersachsen",
+    "url": "https://agaplesion-jobs.softgarden.io/job/58658435/Assistenzarzt-w-m-d-f%C3%BCr-unser-Zentrum-f%C3%BCr-Psychosoziale-Medizin",
+    "description": "Assistenzarzt (w/m/d) für unser Zentrum für Psychosoziale Medizin in Teil- / Vollzeit zum nächstmöglichen Termin Die AGAPLESION DIAKONIEKLINIKUM ROTENBURG gemeinnützige GmbH ist das größte konfessionelle Krankenhaus in Niedersachsen und akademisches Lehrkrankenhaus der Medizinischen Fakultät der Universität Hamburg. Als Maximalversorger mit rund 215.000 Patientenkontakten im Jahr bietet es nahezu das gesamte Spektrum moderner Krankenhausmedizin. Die fortschrittliche Hochleistungsmedizin und die professionelle Pflege mit ihren christlichen Wurzeln zeichnen das Haus aus. Unser 800-Betten-Krankenhaus liegt im verkehrsgünstigen Städtedreieck Bremen, Hamburg, Hannover. Wir bieten unseren rund 2.500 Mitarbeiter:innen einen Arbeitsplatz, der zum Bleiben einlädt. Denn wir legen Wert darauf, dass Familie und Beruf miteinander vereinbart werden können und bieten gezielte fachliche Förderung und langfristige Perspektiven. Die beiden Kliniken für Psychiatrie und Psychotherapie sowie für Psychosomatische Medizin und Psychotherapie bilden zusammen das Zentrum für Psychosoziale Medizin und umfassen insgesamt sechs Stationen und zwei Tageskliniken an den Standorten Verden und Rotenburg mit insgesamt 148 Betten bzw. Plätzen sowie die Psychiatrische Institutsambulanz. In der Klinik werden erwachsene Patient:innen mit dem gesamten Spektrum der psychischen Erkrankungen behandelt. Gute Gründe mit uns zu arbeiten Ein sehr gut organisiertes und umfassendes Weiterbildungscurriculum Vergütung nach TV DN 31 Tage Urlaub, Jahressonderzahlung, Kinderzulage Zusätzliche betriebliche Altersversorgung Regelmäßige psychotherapeutische Supervision Zusätzliche Fortbildungen in störungsspezifischen Psychotherapieverfahren wie DBT, CBASP etc. Sorgfältige und strukturierte Einarbeitung Interne und externe Fort- und Weiterbildungsmöglichkeiten mit finanzieller Unterstützung Familienfreundlicher Arbeitsort mit allen Schulformen Vergünstigtes Deutschland-Ticket als Jobticket Dienstrad-Leasing Firmenfitness mit Hansefit Ihre Aufgaben sind Assistenzärztliche Tätigkeit in der Patientenversorgung Teilnahme am ärztlichen Bereitschaftsdienst Teilnahme am Fortbildungscurriculum des Zentrums Das wünschen wir uns von Ihnen Interesse und Motivation für die Psychiatrie, Psychosomatik und Psychotherapie Interesse und Motivation, die Arbeit im Zentrum für Psychosoziale Medizin aktiv mitzugestalten Approbation oder Berufserlaubnis Weitere Informationen erhalten Sie gerne vorab von unserem Chefarzt Prof. Dr. Carsten Konrad unter T (04261) 77 – 67 00. Wenn Sie unsere positive Einstellung zu den christlichen Werten teilen, freuen wir uns auf Ihre Bewerbung über das Onlineformular.",
+    "specializations": [
+      "assistenzarzt"
+    ],
+    "source": "live:agaplesion",
+    "posted_date": "2026-06-24",
+    "requires_approbation": false,
+    "accepts_berufserlaubnis": true,
+    "raw": {
+      "jsonld": true
+    }
+  }
+}

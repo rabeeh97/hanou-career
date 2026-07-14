@@ -1,0 +1,59 @@
+{
+  "score": 100,
+  "eligibility": "eligible",
+  "rationale": "Passend: Niedersachsen, Berufserlaubnis / Anerkennung-freundlich, geriatrie, geriatr, reha, rehabilitation",
+  "matched": [
+    "Niedersachsen",
+    "Berufserlaubnis / Anerkennung-freundlich",
+    "geriatrie",
+    "geriatr",
+    "reha",
+    "rehabilitation",
+    "innere",
+    "assistenzarzt",
+    "orthopäd",
+    "neuro",
+    "niedersachsen",
+    "Assistenzarzt-Titel"
+  ],
+  "risks": [],
+  "gaps": [
+    "Im Anschreiben Berufserlaubnis (Restlaufzeit ~2 Jahre) und FSP früh erwähnen.",
+    "Stellenbezeichnung „Assistenzarzt (m/w/d) Innere Medizin / Geriatrie / REHA — Niedersachsen“ in Überschrift/Zusammenfassung der Bewerbung wörtlich aufnehmen.",
+    "Motivationssatz mit Bezug auf Rehaklinikum in Niedersachsen (via MedicusConsulting #3817) und deren Schwerpunkt formulieren.",
+    "Keine Approbation erfinden; nicht als „approbierter Arzt“ bezeichnen."
+  ],
+  "job": {
+    "id": "831542b252",
+    "title": "Assistenzarzt (m/w/d) Innere Medizin / Geriatrie / REHA — Niedersachsen",
+    "employer": "Rehaklinikum in Niedersachsen (via MedicusConsulting #3817)",
+    "location": "Niedersachsen",
+    "city": "Niedersachsen",
+    "bundesland": "Niedersachsen",
+    "url": "https://www.medicusconsulting.com/assistenzarzt-m-w-d-innere-medizin-geriatrie-reha-2258.html",
+    "description": "Assistenzarzt Innere Medizin/Geriatrie/Reha in NI-Rehaklinikum (~340 Betten, Orthopädie/Neurologie/Geriatrie/Psychosomatik). Interesse an geriatrischer Rehabilitation. Vermittler; Exact-Standort und Berufserlaubnis beim Kontakt klären.",
+    "specializations": [
+      "reha_geriatrie",
+      "reha",
+      "innere",
+      "orthopaedie",
+      "assistenzarzt"
+    ],
+    "source": "manual:medicus",
+    "posted_date": "2026-06-18",
+    "requires_approbation": false,
+    "accepts_berufserlaubnis": true,
+    "raw": {
+      "url": "https://www.medicusconsulting.com/assistenzarzt-m-w-d-innere-medizin-geriatrie-reha-2258.html",
+      "title": "Assistenzarzt (m/w/d) Innere Medizin / Geriatrie / REHA — Niedersachsen",
+      "employer": "Rehaklinikum in Niedersachsen (via MedicusConsulting #3817)",
+      "city": "Niedersachsen",
+      "bundesland": "Niedersachsen",
+      "location": "Niedersachsen",
+      "posted_date": "2026-06-18",
+      "description": "Assistenzarzt Innere Medizin/Geriatrie/Reha in NI-Rehaklinikum (~340 Betten, Orthopädie/Neurologie/Geriatrie/Psychosomatik). Interesse an geriatrischer Rehabilitation. Vermittler; Exact-Standort und Berufserlaubnis beim Kontakt klären.",
+      "source": "manual:medicus",
+      "active": true
+    }
+  }
+}

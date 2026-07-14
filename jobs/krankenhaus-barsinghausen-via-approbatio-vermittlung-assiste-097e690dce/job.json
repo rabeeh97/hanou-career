@@ -1,0 +1,56 @@
+{
+  "score": 100,
+  "eligibility": "eligible",
+  "rationale": "Passend: Niedersachsen, Berufserlaubnis / Anerkennung-freundlich, geriatrie, geriatr, reha, innere",
+  "matched": [
+    "Niedersachsen",
+    "Berufserlaubnis / Anerkennung-freundlich",
+    "geriatrie",
+    "geriatr",
+    "reha",
+    "innere",
+    "multimorbid",
+    "assistenzarzt",
+    "weiterbildung",
+    "niedersachsen",
+    "Assistenzarzt-Titel"
+  ],
+  "risks": [],
+  "gaps": [
+    "Im Anschreiben Berufserlaubnis (Restlaufzeit ~2 Jahre) und FSP früh erwähnen.",
+    "Stellenbezeichnung „Assistenzarzt (m/w/d) Geriatrie — Barsinghausen“ in Überschrift/Zusammenfassung der Bewerbung wörtlich aufnehmen.",
+    "Motivationssatz mit Bezug auf Krankenhaus Barsinghausen (via Approbatio / Vermittlung) und deren Schwerpunkt formulieren.",
+    "Keine Approbation erfinden; nicht als „approbierter Arzt“ bezeichnen."
+  ],
+  "job": {
+    "id": "097e690dce",
+    "title": "Assistenzarzt (m/w/d) Geriatrie — Barsinghausen",
+    "employer": "Krankenhaus Barsinghausen (via Approbatio / Vermittlung)",
+    "location": "Barsinghausen, Region Hannover, Niedersachsen",
+    "city": "Barsinghausen",
+    "bundesland": "Niedersachsen",
+    "url": "https://www.xing.com/jobs/barsinghausen-assistenzarzt-geriatrie-155535011",
+    "description": "Assistenzarzt Geriatrie an Akademischem Lehrkrankenhaus (~250–500 Betten) in Barsinghausen. Geriatrie-Station ~31 Betten, ~500 Patienten/Jahr; geriatrische Assessments, interdisziplinäre Therapiepläne, Diagnostik/Therapie multimorbider Patienten. Weiterbildungsermächtigung Geriatrie und Innere Medizin. Deutsche Approbation genannt — Berufserlaubnis-Pfad beim Vermittler klären.",
+    "specializations": [
+      "reha_geriatrie",
+      "innere",
+      "assistenzarzt"
+    ],
+    "source": "manual:xing-approbatio",
+    "posted_date": "2026-06-15",
+    "requires_approbation": false,
+    "accepts_berufserlaubnis": true,
+    "raw": {
+      "url": "https://www.xing.com/jobs/barsinghausen-assistenzarzt-geriatrie-155535011",
+      "title": "Assistenzarzt (m/w/d) Geriatrie — Barsinghausen",
+      "employer": "Krankenhaus Barsinghausen (via Approbatio / Vermittlung)",
+      "city": "Barsinghausen",
+      "bundesland": "Niedersachsen",
+      "location": "Barsinghausen, Region Hannover, Niedersachsen",
+      "posted_date": "2026-06-15",
+      "description": "Assistenzarzt Geriatrie an Akademischem Lehrkrankenhaus (~250–500 Betten) in Barsinghausen. Geriatrie-Station ~31 Betten, ~500 Patienten/Jahr; geriatrische Assessments, interdisziplinäre Therapiepläne, Diagnostik/Therapie multimorbider Patienten. Weiterbildungsermächtigung Geriatrie und Innere Medizin. Deutsche Approbation genannt — Berufserlaubnis-Pfad beim Vermittler klären.",
+      "source": "manual:xing-approbatio",
+      "active": true
+    }
+  }
+}

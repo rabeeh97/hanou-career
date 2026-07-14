@@ -1,0 +1,56 @@
+{
+  "score": 100,
+  "eligibility": "eligible",
+  "rationale": "Passend: Niedersachsen, geriatrie, geriatr, reha, innere, internist Risiken: Vermittler-/Agentur-Anzeige — Klinik direkt prüfen.",
+  "matched": [
+    "Niedersachsen",
+    "geriatrie",
+    "geriatr",
+    "reha",
+    "innere",
+    "internist",
+    "assistenzarzt",
+    "niedersachsen",
+    "Assistenzarzt-Titel"
+  ],
+  "risks": [
+    "Vermittler-/Agentur-Anzeige — Klinik direkt prüfen."
+  ],
+  "gaps": [
+    "Im Anschreiben Berufserlaubnis (Restlaufzeit ~2 Jahre) und FSP früh erwähnen.",
+    "Stellenbezeichnung „Assistenzarzt Innere Medizin und Geriatrie (m/w/d) — Raum Wolfsburg“ in Überschrift/Zusammenfassung der Bewerbung wörtlich aufnehmen.",
+    "Motivationssatz mit Bezug auf Klinik (via FFD Fachkräfte für Deutschland e.V.) und deren Schwerpunkt formulieren.",
+    "Keine Approbation erfinden; nicht als „approbierter Arzt“ bezeichnen."
+  ],
+  "job": {
+    "id": "17c2e46c7a",
+    "title": "Assistenzarzt Innere Medizin und Geriatrie (m/w/d) — Raum Wolfsburg",
+    "employer": "Klinik (via FFD Fachkräfte für Deutschland e.V.)",
+    "location": "Wolfsburg / Umgebung, Niedersachsen",
+    "city": "Wolfsburg",
+    "bundesland": "Niedersachsen",
+    "url": "https://www.xing.com/jobs/wolfsburg-assistenzarzt-innere-medizin-geriatrie-153770814",
+    "description": "Assistenzarzt Innere Medizin-Geriatrie. Diagnose und Therapie internistischer Krankheitsbilder, Patientenversorgung unter fachärztlicher Anleitung, Dokumentation/Arztbriefe, Schicht-/Bereitschaftsdienst. Vermittlerstelle FFD; Junior-Pfad Innere+Geriatrie in Ostniedersachsen.",
+    "specializations": [
+      "reha_geriatrie",
+      "innere",
+      "assistenzarzt"
+    ],
+    "source": "manual:xing-ffd",
+    "posted_date": "2026-06-01",
+    "requires_approbation": false,
+    "accepts_berufserlaubnis": null,
+    "raw": {
+      "url": "https://www.xing.com/jobs/wolfsburg-assistenzarzt-innere-medizin-geriatrie-153770814",
+      "title": "Assistenzarzt Innere Medizin und Geriatrie (m/w/d) — Raum Wolfsburg",
+      "employer": "Klinik (via FFD Fachkräfte für Deutschland e.V.)",
+      "city": "Wolfsburg",
+      "bundesland": "Niedersachsen",
+      "location": "Wolfsburg / Umgebung, Niedersachsen",
+      "posted_date": "2026-06-01",
+      "description": "Assistenzarzt Innere Medizin-Geriatrie. Diagnose und Therapie internistischer Krankheitsbilder, Patientenversorgung unter fachärztlicher Anleitung, Dokumentation/Arztbriefe, Schicht-/Bereitschaftsdienst. Vermittlerstelle FFD; Junior-Pfad Innere+Geriatrie in Ostniedersachsen.",
+      "source": "manual:xing-ffd",
+      "active": true
+    }
+  }
+}

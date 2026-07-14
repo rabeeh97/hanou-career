@@ -1,0 +1,46 @@
+{
+  "score": 88,
+  "eligibility": "eligible",
+  "rationale": "Passend: Niedersachsen, innere, assistenzarzt, kardiolog, harz, Assistenzarzt-Titel",
+  "matched": [
+    "Niedersachsen",
+    "innere",
+    "assistenzarzt",
+    "kardiolog",
+    "harz",
+    "Assistenzarzt-Titel"
+  ],
+  "risks": [],
+  "gaps": [
+    "Im Anschreiben Berufserlaubnis (Restlaufzeit ~2 Jahre) und FSP früh erwähnen.",
+    "Stellenbezeichnung „Assistenzarzt:ärztin (m/w/d) bzw.  Facharzt:ärztin (m/w/d) für die Intensivstation“ in Überschrift/Zusammenfassung der Bewerbung wörtlich aufnehmen.",
+    "Motivationssatz mit Bezug auf AGAPLESION Ev. KLINIKUM SCHAUMBURG gGmbH und deren Schwerpunkt formulieren.",
+    "Keine Approbation erfinden; nicht als „approbierter Arzt“ bezeichnen."
+  ],
+  "job": {
+    "id": "jsonl-agaplesion_jobs-extract-75c2a0bd9e",
+    "title": "Assistenzarzt:ärztin (m/w/d) bzw.  Facharzt:ärztin (m/w/d) für die Intensivstation",
+    "employer": "AGAPLESION Ev. KLINIKUM SCHAUMBURG gGmbH",
+    "location": "Obernkirchen, Niedersachsen",
+    "city": "Obernkirchen",
+    "bundesland": "Niedersachsen",
+    "url": "https://agaplesion-jobs.softgarden.io/job/52562264/Assistenzarzt-%C3%A4rztin-m-w-d-bzw.-Facharzt-%C3%A4rztin-m-w-d-f%C3%BCr-die-Intensivstation-?jobDbPVId=271774573&l=de",
+    "description": null,
+    "specializations": [
+      "anaesthesie",
+      "arzt",
+      "innere_medizin",
+      "intensivmedizin",
+      "kardiologie",
+      "pneumologie"
+    ],
+    "source": "hano-jsonl:agaplesion_jobs-extract",
+    "posted_date": "2026-04-30",
+    "requires_approbation": false,
+    "accepts_berufserlaubnis": null,
+    "raw": {
+      "hano": null,
+      "plz": "31683"
+    }
+  }
+}

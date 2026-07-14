@@ -1,0 +1,52 @@
+{
+  "score": 100,
+  "eligibility": "eligible",
+  "rationale": "Passend: Niedersachsen, innere, internist, assistenzarzt, weiterbildung, kardiolog",
+  "matched": [
+    "Niedersachsen",
+    "innere",
+    "internist",
+    "assistenzarzt",
+    "weiterbildung",
+    "kardiolog",
+    "niedersachsen",
+    "Assistenzarzt-Titel"
+  ],
+  "risks": [],
+  "gaps": [
+    "Im Anschreiben Berufserlaubnis (Restlaufzeit ~2 Jahre) und FSP früh erwähnen.",
+    "Stellenbezeichnung „Assistenzarzt für Innere Medizin (m/w/d) — Herz- & Gefäßzentrum Göttingen“ in Überschrift/Zusammenfassung der Bewerbung wörtlich aufnehmen.",
+    "Motivationssatz mit Bezug auf Herz- & Gefäßzentrum am KH Neu Bethlehem, Göttingen und deren Schwerpunkt formulieren.",
+    "Keine Approbation erfinden; nicht als „approbierter Arzt“ bezeichnen."
+  ],
+  "job": {
+    "id": "458f41cd7f",
+    "title": "Assistenzarzt für Innere Medizin (m/w/d) — Herz- & Gefäßzentrum Göttingen",
+    "employer": "Herz- & Gefäßzentrum am KH Neu Bethlehem, Göttingen",
+    "location": "Göttingen, Niedersachsen",
+    "city": "Göttingen",
+    "bundesland": "Niedersachsen",
+    "url": "https://www.arztjobs.de/goettingen/innere-medizin/herz-gefaesszentrum/assistenzarzt-fuer-innere-medizin-212",
+    "description": "Assistenzarzt Innere Medizin Vollzeit am Herz- und Gefäßzentrum Göttingen. Patientenbetreuung, kardiologische und internistische Untersuchungen. Abgeschlossenes Medizinstudium, gute Deutschkenntnisse; Interesse an Weiterbildung Innere Medizin. Junior-Klinikstelle in NI; BE-Path und Dienstplan vor Bewerbung abklären.",
+    "specializations": [
+      "innere",
+      "assistenzarzt"
+    ],
+    "source": "manual:arztjobs",
+    "posted_date": "2026-05-21",
+    "requires_approbation": false,
+    "accepts_berufserlaubnis": null,
+    "raw": {
+      "url": "https://www.arztjobs.de/goettingen/innere-medizin/herz-gefaesszentrum/assistenzarzt-fuer-innere-medizin-212",
+      "title": "Assistenzarzt für Innere Medizin (m/w/d) — Herz- & Gefäßzentrum Göttingen",
+      "employer": "Herz- & Gefäßzentrum am KH Neu Bethlehem, Göttingen",
+      "city": "Göttingen",
+      "bundesland": "Niedersachsen",
+      "location": "Göttingen, Niedersachsen",
+      "posted_date": "2026-05-21",
+      "description": "Assistenzarzt Innere Medizin Vollzeit am Herz- und Gefäßzentrum Göttingen. Patientenbetreuung, kardiologische und internistische Untersuchungen. Abgeschlossenes Medizinstudium, gute Deutschkenntnisse; Interesse an Weiterbildung Innere Medizin. Junior-Klinikstelle in NI; BE-Path und Dienstplan vor Bewerbung abklären.",
+      "source": "manual:arztjobs",
+      "active": true
+    }
+  }
+}

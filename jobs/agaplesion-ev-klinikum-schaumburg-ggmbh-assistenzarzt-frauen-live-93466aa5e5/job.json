@@ -1,0 +1,44 @@
+{
+  "score": 62,
+  "eligibility": "risky",
+  "rationale": "Passend: Niedersachsen, visite, assistenzarzt, weiterbildung, niedersachsen, Assistenzarzt-Titel Risiken: Approbation erwähnt — BE-Pfad unklar; Anschreiben vorsichtig formulieren.; Senioritäts-Signal: chefarzt",
+  "matched": [
+    "Niedersachsen",
+    "visite",
+    "assistenzarzt",
+    "weiterbildung",
+    "niedersachsen",
+    "Assistenzarzt-Titel"
+  ],
+  "risks": [
+    "Approbation erwähnt — BE-Pfad unklar; Anschreiben vorsichtig formulieren.",
+    "Senioritäts-Signal: chefarzt"
+  ],
+  "gaps": [
+    "Approbation fehlt — im Anschreiben Berufserlaubnis + laufende Anerkennung klar nennen; nachfragen, ob BE ausreicht.",
+    "Eligibility risky: vor Bewerbung telefonisch/per Mail klären, ob Berufserlaubnis akzeptiert wird.",
+    "Stellenbezeichnung „Assistenzarzt  Frauenheilkunde und Geburtshilfe (m/w/d)“ in Überschrift/Zusammenfassung der Bewerbung wörtlich aufnehmen.",
+    "Motivationssatz mit Bezug auf AGAPLESION Ev. KLINIKUM SCHAUMBURG gGmbH und deren Schwerpunkt formulieren.",
+    "Keine Approbation erfinden; nicht als „approbierter Arzt“ bezeichnen."
+  ],
+  "job": {
+    "id": "live-93466aa5e5",
+    "title": "Assistenzarzt  Frauenheilkunde und Geburtshilfe (m/w/d)",
+    "employer": "AGAPLESION Ev. KLINIKUM SCHAUMBURG gGmbH",
+    "location": "Obernkirchen, Niedersachsen",
+    "city": "Obernkirchen",
+    "bundesland": "Niedersachsen",
+    "url": "https://agaplesion-jobs.softgarden.io/job/65930429/Assistenzarzt-Frauenheilkunde-und-Geburtshilfe-m-w-d-",
+    "description": "Herzlich Willkommen im AGAPLESION EV. KLINIKUM SCHAUMBURG! Unsere Vision ist es, eine zukunftsorientierte Medizin und erstklassige Pflege im Einklang mit christlichen Werten zu praktizieren. Als einziges Krankenhaus im Landkreis Schaumburg mit 437 Betten und einem hochmotivierten Team von mehr als 1.000 Mitarbeiter:innen setzen wir uns mit Leidenschaft für das Wohlergehen unserer Patient:innen ein. Gestalten Sie mit uns die Zukunft der Frauenheilkunde! Sind Sie bereit, Teil eines hochmotivierten Teams zu werden? Wir suchen engagierte Mitgestalter:innen, die ihre Leidenschaft für die Frauenheilkunde und die Geburtshilfe mit uns teilen möchten! Die Schwerpunkte der Abteilung Gynäkologie und Geburtshilfe liegen in der familienorientierten Geburtshilfe (Zertifikat der WHO und UNICEF-Initiative „Babyfreundliches Krankenhaus“), dem zertifizierten Brustzentrum, der mikroinvasiven Chirurgie, der Beckenboden- und Inkontinenzchirurgie und der gynäko-onkologischen Chirurgie.&nbsp; Wir bieten Ihnen Weiterbildungskonzept: &nbsp;Für Ihre berufliche Weiterentwicklung besteht die volle Weiterbildungsermächtigung im Gebiet Frauenheilkunde und Geburtshilfe (60 Monate)&nbsp; Attraktiver Tarifvertrag &amp; finanzielle Sicherheit: &nbsp;Sie profitieren vom TVDN inklusive Jahressonderzahlung, Kinderzulage und 31 Tagen Urlaub. Zusätzlich unterstützen wir Sie mit einer betrieblichen Altersvorsorge Zusammenhalt:&nbsp; Ein motiviertes, unterstützendes Team, familienfreundliches Arbeiten, strukturierte Einarbeitung und gemeinsame Firmenfeiern für ein starkes Miteinander, zudem haben Sie die Möglichkeit der Werkfeuerwehr beizutreten Benefits: &nbsp;Umfangreiche Fort- und Weiterbildungen, exklusive Mitarbeiterrabatte, Gesundheitsförderung (Hansefit-Zugang, BGM-Wochenprogramm, Zuschuss zur Arbeitsplatzbrille),kostenfreie Parkplatzmöglichkeiten Ihre Herausforderung Betreuung und Behandlung von Patient: innen (m/w/d) Assistenz bei operativen Eingriffen Teilnahme an Visiten und interdisziplinären Besprechungen Haben Sie Lust auf eine neue Herausforderung? Wir freuen uns auf Sie! Wenn Sie über eine deutsche Approbation als Arzt (m/w/d) verfügen und eine Leidenschaft für die Gynäkologie und Geburtshilfe haben, teamorientiert arbeiten und bereit sind, neue Wege zu gehen, freuen wir uns darauf, Sie in unserem Team willkommen zu heißen. Bewerben Sie sich jetzt und werden Sie Teil unseres engagierten Teams in der Gynäkologie und Geburtshilfe! &nbsp; Für nähere Informationen steht Ihnen Herr Dr. Arfsten (Chefarzt für Gynäkologie und Geburtshilfe) unter der Telefonnummer 05724 / 95806701 gerne zur Verfügung.",
+    "specializations": [
+      "assistenzarzt"
+    ],
+    "source": "live:agaplesion",
+    "posted_date": "2026-07-08",
+    "requires_approbation": null,
+    "accepts_berufserlaubnis": null,
+    "raw": {
+      "jsonld": true
+    }
+  }
+}

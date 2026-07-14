@@ -1,0 +1,46 @@
+{
+  "score": 52,
+  "eligibility": "eligible",
+  "rationale": "Passend: Niedersachsen, Klinikradar-Lead, Berufserlaubnis / Anerkennung-freundlich, geriatrie, geriatr, reha Risiken: Klinikradar-Lead — aktive Stellenausschreibung auf Klinikseite prüfen.",
+  "matched": [
+    "Niedersachsen",
+    "Klinikradar-Lead",
+    "Berufserlaubnis / Anerkennung-freundlich",
+    "geriatrie",
+    "geriatr",
+    "reha",
+    "assistenzarzt",
+    "neuro",
+    "niedersachsen"
+  ],
+  "risks": [
+    "Klinikradar-Lead — aktive Stellenausschreibung auf Klinikseite prüfen."
+  ],
+  "gaps": [
+    "Im Anschreiben Berufserlaubnis (Restlaufzeit ~2 Jahre) und FSP früh erwähnen.",
+    "Stellenbezeichnung „Klinik-Ziel (Klinikradar): Universitätsmedizin Göttingen“ in Überschrift/Zusammenfassung der Bewerbung wörtlich aufnehmen.",
+    "Motivationssatz mit Bezug auf Universitätsmedizin Göttingen und deren Schwerpunkt formulieren.",
+    "Keine Approbation erfinden; nicht als „approbierter Arzt“ bezeichnen."
+  ],
+  "job": {
+    "id": "klinikradar-165",
+    "title": "Klinik-Ziel (Klinikradar): Universitätsmedizin Göttingen",
+    "employer": "Universitätsmedizin Göttingen",
+    "location": "Göttingen, Niedersachsen",
+    "city": "Göttingen",
+    "bundesland": "Niedersachsen",
+    "url": "https://klinikradar.de/kliniken/universitaetsmedizin-goettingen",
+    "description": "Klinikradar-Klinik in Niedersachsen (neurologie). Adresse: 37075, Göttingen. Kein einzelnes Stellenangebot — Karriere-/Kontaktseite prüfen auf Assistenzarzt / Berufserlaubnis / Geriatrie-Reha.",
+    "specializations": [
+      "neurologie"
+    ],
+    "source": "hano-jsonl:klinikradar",
+    "posted_date": null,
+    "requires_approbation": false,
+    "accepts_berufserlaubnis": true,
+    "raw": {
+      "plz": "37075",
+      "klinikradar": "165"
+    }
+  }
+}

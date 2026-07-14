@@ -1,0 +1,58 @@
+{
+  "score": 100,
+  "eligibility": "eligible",
+  "rationale": "Passend: Niedersachsen, Berufserlaubnis / Anerkennung-freundlich, geriatrie, geriatr, reha, rehabilitation",
+  "matched": [
+    "Niedersachsen",
+    "Berufserlaubnis / Anerkennung-freundlich",
+    "geriatrie",
+    "geriatr",
+    "reha",
+    "rehabilitation",
+    "visite",
+    "aufnahme",
+    "assistenzarzt",
+    "bad harzburg",
+    "Assistenzarzt-Titel"
+  ],
+  "risks": [],
+  "gaps": [
+    "Im Anschreiben Berufserlaubnis (Restlaufzeit ~2 Jahre) und FSP früh erwähnen.",
+    "Weitere Hospitation möglich — Zeugnis von Dr. Willjes als Anlage beilegen.",
+    "Stellenbezeichnung „Assistenzarzt Geriatrie in der Rehabilitation (m/w/d)“ in Überschrift/Zusammenfassung der Bewerbung wörtlich aufnehmen.",
+    "Motivationssatz mit Bezug auf Herzog-Julius-Klinik / Michels Kliniken, Bad Harzburg und deren Schwerpunkt formulieren.",
+    "Keine Approbation erfinden; nicht als „approbierter Arzt“ bezeichnen."
+  ],
+  "job": {
+    "id": "419ffe5c37",
+    "title": "Assistenzarzt Geriatrie in der Rehabilitation (m/w/d)",
+    "employer": "Herzog-Julius-Klinik / Michels Kliniken, Bad Harzburg",
+    "location": "Bad Harzburg, Niedersachsen",
+    "city": "Bad Harzburg",
+    "bundesland": "Niedersachsen",
+    "url": "https://www.arztjobs.de/bad-harzburg/geriatrie/michels-kliniken-verwaltung/assistenzarzt-geriatrie-in-der-rehabilitation-100",
+    "description": "Assistenzarzt Geriatrie in der Rehabilitation an der Herzog-Julius-Klinik Bad Harzburg. Aufnahme- und Entlassungsuntersuchungen, Visiten, Therapiepläne unter Supervision, Bereitschaftsdienst, Arztbriefe. Approbation erwünscht; Vorerfahrung Klinik/Praxis von Vorteil. Sehr guter Fit nach Hospitation vor Ort.",
+    "specializations": [
+      "reha_geriatrie",
+      "reha",
+      "assistenzarzt"
+    ],
+    "source": "manual:arztjobs",
+    "posted_date": "2026-07-10",
+    "requires_approbation": null,
+    "accepts_berufserlaubnis": true,
+    "raw": {
+      "url": "https://www.arztjobs.de/bad-harzburg/geriatrie/michels-kliniken-verwaltung/assistenzarzt-geriatrie-in-der-rehabilitation-100",
+      "title": "Assistenzarzt Geriatrie in der Rehabilitation (m/w/d)",
+      "employer": "Herzog-Julius-Klinik / Michels Kliniken, Bad Harzburg",
+      "city": "Bad Harzburg",
+      "bundesland": "Niedersachsen",
+      "location": "Bad Harzburg, Niedersachsen",
+      "posted_date": "2026-07-10",
+      "description": "Assistenzarzt Geriatrie in der Rehabilitation an der Herzog-Julius-Klinik Bad Harzburg. Aufnahme- und Entlassungsuntersuchungen, Visiten, Therapiepläne unter Supervision, Bereitschaftsdienst, Arztbriefe. Approbation erwünscht; Vorerfahrung Klinik/Praxis von Vorteil. Sehr guter Fit nach Hospitation vor Ort.",
+      "source": "manual:arztjobs",
+      "accepts_berufserlaubnis": true,
+      "active": true
+    }
+  }
+}

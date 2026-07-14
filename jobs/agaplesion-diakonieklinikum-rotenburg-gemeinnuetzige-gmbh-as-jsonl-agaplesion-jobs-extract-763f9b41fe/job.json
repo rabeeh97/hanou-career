@@ -1,0 +1,41 @@
+{
+  "score": 78,
+  "eligibility": "eligible",
+  "rationale": "Passend: Niedersachsen, assistenzarzt, niedersachsen, Assistenzarzt-Titel",
+  "matched": [
+    "Niedersachsen",
+    "assistenzarzt",
+    "niedersachsen",
+    "Assistenzarzt-Titel"
+  ],
+  "risks": [],
+  "gaps": [
+    "Im Anschreiben Berufserlaubnis (Restlaufzeit ~2 Jahre) und FSP früh erwähnen.",
+    "Stellenbezeichnung „Assistenzarzt (w/m/d) für unser Institut für Anästhesie und Intensivmedizin“ in Überschrift/Zusammenfassung der Bewerbung wörtlich aufnehmen.",
+    "Motivationssatz mit Bezug auf AGAPLESION DIAKONIEKLINIKUM ROTENBURG gemeinnützige GmbH und deren Schwerpunkt formulieren.",
+    "Keine Approbation erfinden; nicht als „approbierter Arzt“ bezeichnen."
+  ],
+  "job": {
+    "id": "jsonl-agaplesion_jobs-extract-763f9b41fe",
+    "title": "Assistenzarzt (w/m/d) für unser Institut für Anästhesie und Intensivmedizin",
+    "employer": "AGAPLESION DIAKONIEKLINIKUM ROTENBURG gemeinnützige GmbH",
+    "location": "Rotenburg (Wümme), Niedersachsen",
+    "city": "Rotenburg (Wümme)",
+    "bundesland": "Niedersachsen",
+    "url": "https://agaplesion-jobs.softgarden.io/job/62303699/Assistenzarzt-w-m-d-f%C3%BCr-unser-Institut-f%C3%BCr-An%C3%A4sthesie-und-Intensivmedizin?jobDbPVId=271206138&l=de",
+    "description": null,
+    "specializations": [
+      "anaesthesie",
+      "arzt",
+      "intensivmedizin"
+    ],
+    "source": "hano-jsonl:agaplesion_jobs-extract",
+    "posted_date": "2026-04-25",
+    "requires_approbation": false,
+    "accepts_berufserlaubnis": null,
+    "raw": {
+      "hano": null,
+      "plz": "27356"
+    }
+  }
+}

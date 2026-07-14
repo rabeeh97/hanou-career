@@ -1,0 +1,55 @@
+{
+  "score": 100,
+  "eligibility": "eligible",
+  "rationale": "Passend: Niedersachsen, Berufserlaubnis / Anerkennung-freundlich, geriatrie, geriatr, reha, innere",
+  "matched": [
+    "Niedersachsen",
+    "Berufserlaubnis / Anerkennung-freundlich",
+    "geriatrie",
+    "geriatr",
+    "reha",
+    "innere",
+    "internist",
+    "assistenzarzt",
+    "niedersachsen",
+    "Assistenzarzt-Titel"
+  ],
+  "risks": [],
+  "gaps": [
+    "Im Anschreiben Berufserlaubnis (Restlaufzeit ~2 Jahre) und FSP früh erwähnen.",
+    "Stellenbezeichnung „Assistenzarzt Innere Medizin Geriatrie Raum Hannover (m/w/d)“ in Überschrift/Zusammenfassung der Bewerbung wörtlich aufnehmen.",
+    "Motivationssatz mit Bezug auf Internistisch-geriatrisches Gesundheitszentrum (via HiPo Executive / Medi-Karriere) und deren Schwerpunkt formulieren.",
+    "Keine Approbation erfinden; nicht als „approbierter Arzt“ bezeichnen."
+  ],
+  "job": {
+    "id": "e5fd949e61",
+    "title": "Assistenzarzt Innere Medizin Geriatrie Raum Hannover (m/w/d)",
+    "employer": "Internistisch-geriatrisches Gesundheitszentrum (via HiPo Executive / Medi-Karriere)",
+    "location": "Raum Hannover, Niedersachsen",
+    "city": "Hannover",
+    "bundesland": "Niedersachsen",
+    "url": "https://www.medi-karriere.de/job/assistenzarzt-innere-medizin-geriatrie-raum-hannover-m-w-d-enge-betreuung/",
+    "description": "Assistenzarzt Innere Medizin/Geriatrie im Raum Hannover. Stationsarbeit, Diagnostik/Therapie, Arztbriefe, Bereitschaftsdienst. Strukturierte WB Innere + Geriatrie. Vermittlerstelle; Approbation in Anzeige genannt — Berufserlaubnis-Pfad telefonisch klären.",
+    "specializations": [
+      "reha_geriatrie",
+      "innere",
+      "assistenzarzt"
+    ],
+    "source": "manual:medi-karriere",
+    "posted_date": "2026-06-01",
+    "requires_approbation": false,
+    "accepts_berufserlaubnis": true,
+    "raw": {
+      "url": "https://www.medi-karriere.de/job/assistenzarzt-innere-medizin-geriatrie-raum-hannover-m-w-d-enge-betreuung/",
+      "title": "Assistenzarzt Innere Medizin Geriatrie Raum Hannover (m/w/d)",
+      "employer": "Internistisch-geriatrisches Gesundheitszentrum (via HiPo Executive / Medi-Karriere)",
+      "city": "Hannover",
+      "bundesland": "Niedersachsen",
+      "location": "Raum Hannover, Niedersachsen",
+      "posted_date": "2026-06-01",
+      "description": "Assistenzarzt Innere Medizin/Geriatrie im Raum Hannover. Stationsarbeit, Diagnostik/Therapie, Arztbriefe, Bereitschaftsdienst. Strukturierte WB Innere + Geriatrie. Vermittlerstelle; Approbation in Anzeige genannt — Berufserlaubnis-Pfad telefonisch klären.",
+      "source": "manual:medi-karriere",
+      "active": true
+    }
+  }
+}

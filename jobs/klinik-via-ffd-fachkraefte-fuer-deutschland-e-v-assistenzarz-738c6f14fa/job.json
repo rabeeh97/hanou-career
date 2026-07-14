@@ -1,0 +1,56 @@
+{
+  "score": 100,
+  "eligibility": "eligible",
+  "rationale": "Passend: Niedersachsen, Berufserlaubnis / Anerkennung-freundlich, geriatrie, geriatr, reha, innere Risiken: Vermittler-/Agentur-Anzeige — Klinik direkt prüfen.",
+  "matched": [
+    "Niedersachsen",
+    "Berufserlaubnis / Anerkennung-freundlich",
+    "geriatrie",
+    "geriatr",
+    "reha",
+    "innere",
+    "assistenzarzt",
+    "niedersachsen",
+    "Assistenzarzt-Titel"
+  ],
+  "risks": [
+    "Vermittler-/Agentur-Anzeige — Klinik direkt prüfen."
+  ],
+  "gaps": [
+    "Im Anschreiben Berufserlaubnis (Restlaufzeit ~2 Jahre) und FSP früh erwähnen.",
+    "Stellenbezeichnung „Assistenzarzt (m/w/d) Innere Medizin-Geriatrie — Raum Braunschweig“ in Überschrift/Zusammenfassung der Bewerbung wörtlich aufnehmen.",
+    "Motivationssatz mit Bezug auf Klinik (via FFD Fachkräfte für Deutschland e.V.) und deren Schwerpunkt formulieren.",
+    "Keine Approbation erfinden; nicht als „approbierter Arzt“ bezeichnen."
+  ],
+  "job": {
+    "id": "738c6f14fa",
+    "title": "Assistenzarzt (m/w/d) Innere Medizin-Geriatrie — Raum Braunschweig",
+    "employer": "Klinik (via FFD Fachkräfte für Deutschland e.V.)",
+    "location": "Braunschweig / Umgebung, Niedersachsen",
+    "city": "Braunschweig",
+    "bundesland": "Niedersachsen",
+    "url": "https://www.jobijoba.de/detailanzeige/9/d6865dd365afefd50011edb8b4e4a897",
+    "description": "Vermittlerstelle: Assistenzarzt Innere Medizin-Geriatrie im Raum Braunschweig. Stationsarbeit Innere/Geriatrie unter Supervision, Dokumentation, Dienste. Junior-Klinikrolle; Exact-Standort und Berufserlaubnis beim FFD-Kontakt klären.",
+    "specializations": [
+      "reha_geriatrie",
+      "innere",
+      "assistenzarzt"
+    ],
+    "source": "manual:jobijoba-ffd",
+    "posted_date": "2026-07-01",
+    "requires_approbation": false,
+    "accepts_berufserlaubnis": true,
+    "raw": {
+      "url": "https://www.jobijoba.de/detailanzeige/9/d6865dd365afefd50011edb8b4e4a897",
+      "title": "Assistenzarzt (m/w/d) Innere Medizin-Geriatrie — Raum Braunschweig",
+      "employer": "Klinik (via FFD Fachkräfte für Deutschland e.V.)",
+      "city": "Braunschweig",
+      "bundesland": "Niedersachsen",
+      "location": "Braunschweig / Umgebung, Niedersachsen",
+      "posted_date": "2026-07-01",
+      "description": "Vermittlerstelle: Assistenzarzt Innere Medizin-Geriatrie im Raum Braunschweig. Stationsarbeit Innere/Geriatrie unter Supervision, Dokumentation, Dienste. Junior-Klinikrolle; Exact-Standort und Berufserlaubnis beim FFD-Kontakt klären.",
+      "source": "manual:jobijoba-ffd",
+      "active": true
+    }
+  }
+}

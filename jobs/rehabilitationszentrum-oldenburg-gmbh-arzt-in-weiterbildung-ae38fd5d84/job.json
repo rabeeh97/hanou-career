@@ -1,0 +1,58 @@
+{
+  "score": 100,
+  "eligibility": "eligible",
+  "rationale": "Passend: Niedersachsen, Berufserlaubnis / Anerkennung-freundlich, geriatrie, geriatr, reha, rehabilitation",
+  "matched": [
+    "Niedersachsen",
+    "Berufserlaubnis / Anerkennung-freundlich",
+    "geriatrie",
+    "geriatr",
+    "reha",
+    "rehabilitation",
+    "innere",
+    "visite",
+    "weiterbildung",
+    "harz",
+    "Weiterbildung/Stationsarzt"
+  ],
+  "risks": [],
+  "gaps": [
+    "Im Anschreiben Berufserlaubnis (Restlaufzeit ~2 Jahre) und FSP früh erwähnen.",
+    "Anzeige wirkt facharztnah — prüfen, ob Assistenz-/Weiterbildungsstelle gemeint ist; sonst eher nicht bewerben.",
+    "Stellenbezeichnung „Arzt in Weiterbildung Innere Medizin / Geriatrie (m/w/d) — Reha-Zentrum Oldenburg (Klinikseite)“ in Überschrift/Zusammenfassung der Bewerbung wörtlich aufnehmen.",
+    "Motivationssatz mit Bezug auf Rehabilitationszentrum Oldenburg GmbH und deren Schwerpunkt formulieren.",
+    "Keine Approbation erfinden; nicht als „approbierter Arzt“ bezeichnen."
+  ],
+  "job": {
+    "id": "ae38fd5d84",
+    "title": "Arzt in Weiterbildung Innere Medizin / Geriatrie (m/w/d) — Reha-Zentrum Oldenburg (Klinikseite)",
+    "employer": "Rehabilitationszentrum Oldenburg GmbH",
+    "location": "Oldenburg, Niedersachsen",
+    "city": "Oldenburg",
+    "bundesland": "Niedersachsen",
+    "url": "https://www.rehazentrum-oldenburg.de/karriere/facharzt-w-m-d-fuer-die-dauer-der-weiterbildung-geriatrie-oder-einen-arzt-w-m-d-in-weiterbildung-innere-medizin-58/",
+    "description": "Offizielle Klinikseite: Facharzt befristet für WB Geriatrie ODER Arzt in Weiterbildung Innere Medizin (12 Monate WBE). Explizit: Bewerbungen auch ohne Facharzt willkommen; 1 Jahr WB Innere anrechenbar. Visiten, Medikamentenreview, geriatrische Untersuchung, Teambesprechungen, Studien. Geriatrisches Zentrum Oldenburg mit Uni Oldenburg. Sehr guter AiW-/BE-Pfad.",
+    "specializations": [
+      "reha_geriatrie",
+      "reha",
+      "innere"
+    ],
+    "source": "manual:reha-oldenburg",
+    "posted_date": "2026-07-08",
+    "requires_approbation": false,
+    "accepts_berufserlaubnis": true,
+    "raw": {
+      "url": "https://www.rehazentrum-oldenburg.de/karriere/facharzt-w-m-d-fuer-die-dauer-der-weiterbildung-geriatrie-oder-einen-arzt-w-m-d-in-weiterbildung-innere-medizin-58/",
+      "title": "Arzt in Weiterbildung Innere Medizin / Geriatrie (m/w/d) — Reha-Zentrum Oldenburg (Klinikseite)",
+      "employer": "Rehabilitationszentrum Oldenburg GmbH",
+      "city": "Oldenburg",
+      "bundesland": "Niedersachsen",
+      "location": "Oldenburg, Niedersachsen",
+      "posted_date": "2026-07-08",
+      "description": "Offizielle Klinikseite: Facharzt befristet für WB Geriatrie ODER Arzt in Weiterbildung Innere Medizin (12 Monate WBE). Explizit: Bewerbungen auch ohne Facharzt willkommen; 1 Jahr WB Innere anrechenbar. Visiten, Medikamentenreview, geriatrische Untersuchung, Teambesprechungen, Studien. Geriatrisches Zentrum Oldenburg mit Uni Oldenburg. Sehr guter AiW-/BE-Pfad.",
+      "source": "manual:reha-oldenburg",
+      "accepts_berufserlaubnis": true,
+      "active": true
+    }
+  }
+}

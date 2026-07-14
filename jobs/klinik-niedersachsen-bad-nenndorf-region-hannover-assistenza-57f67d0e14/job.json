@@ -1,0 +1,59 @@
+{
+  "score": 100,
+  "eligibility": "eligible",
+  "rationale": "Passend: Niedersachsen, geriatrie, geriatr, reha, rehabilitation, innere",
+  "matched": [
+    "Niedersachsen",
+    "geriatrie",
+    "geriatr",
+    "reha",
+    "rehabilitation",
+    "innere",
+    "assistenzarzt",
+    "assistenzärztin",
+    "orthopäd",
+    "neuro",
+    "niedersachsen",
+    "Assistenzarzt-Titel"
+  ],
+  "risks": [],
+  "gaps": [
+    "Im Anschreiben Berufserlaubnis (Restlaufzeit ~2 Jahre) und FSP früh erwähnen.",
+    "Stellenbezeichnung „Assistenzärztin / Assistenzarzt (m/w/d) — Klinik Niedersachsen Bad Nenndorf“ in Überschrift/Zusammenfassung der Bewerbung wörtlich aufnehmen.",
+    "Motivationssatz mit Bezug auf Klinik Niedersachsen (Bad Nenndorf / Region Hannover) und deren Schwerpunkt formulieren.",
+    "Keine Approbation erfinden; nicht als „approbierter Arzt“ bezeichnen."
+  ],
+  "job": {
+    "id": "57f67d0e14",
+    "title": "Assistenzärztin / Assistenzarzt (m/w/d) — Klinik Niedersachsen Bad Nenndorf",
+    "employer": "Klinik Niedersachsen (Bad Nenndorf / Region Hannover)",
+    "location": "Bad Nenndorf, Niedersachsen",
+    "city": "Bad Nenndorf",
+    "bundesland": "Niedersachsen",
+    "url": "https://www.klinikniedersachsen.de/stellenangebote.htm",
+    "description": "Rehaklinik mit Orthopädie, Innere Medizin/Geriatrie und Neurologie sucht Assistenzarzt/Assistenzärztin Voll- oder Teilzeit. Interdisziplinäre medizinische Rehabilitation. Details im Stellen-PDF auf der Klinikseite.",
+    "specializations": [
+      "reha_geriatrie",
+      "reha",
+      "innere",
+      "orthopaedie",
+      "assistenzarzt"
+    ],
+    "source": "manual:klinikniedersachsen",
+    "posted_date": "2026-07-01",
+    "requires_approbation": false,
+    "accepts_berufserlaubnis": null,
+    "raw": {
+      "url": "https://www.klinikniedersachsen.de/stellenangebote.htm",
+      "title": "Assistenzärztin / Assistenzarzt (m/w/d) — Klinik Niedersachsen Bad Nenndorf",
+      "employer": "Klinik Niedersachsen (Bad Nenndorf / Region Hannover)",
+      "city": "Bad Nenndorf",
+      "bundesland": "Niedersachsen",
+      "location": "Bad Nenndorf, Niedersachsen",
+      "posted_date": "2026-07-01",
+      "description": "Rehaklinik mit Orthopädie, Innere Medizin/Geriatrie und Neurologie sucht Assistenzarzt/Assistenzärztin Voll- oder Teilzeit. Interdisziplinäre medizinische Rehabilitation. Details im Stellen-PDF auf der Klinikseite.",
+      "source": "manual:klinikniedersachsen",
+      "active": true
+    }
+  }
+}

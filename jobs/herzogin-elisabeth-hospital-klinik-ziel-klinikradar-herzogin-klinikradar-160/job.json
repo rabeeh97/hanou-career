@@ -1,0 +1,45 @@
+{
+  "score": 52,
+  "eligibility": "eligible",
+  "rationale": "Passend: Niedersachsen, Klinikradar-Lead, Berufserlaubnis / Anerkennung-freundlich, geriatrie, geriatr, reha Risiken: Klinikradar-Lead — aktive Stellenausschreibung auf Klinikseite prüfen.",
+  "matched": [
+    "Niedersachsen",
+    "Klinikradar-Lead",
+    "Berufserlaubnis / Anerkennung-freundlich",
+    "geriatrie",
+    "geriatr",
+    "reha",
+    "assistenzarzt",
+    "niedersachsen"
+  ],
+  "risks": [
+    "Klinikradar-Lead — aktive Stellenausschreibung auf Klinikseite prüfen."
+  ],
+  "gaps": [
+    "Im Anschreiben Berufserlaubnis (Restlaufzeit ~2 Jahre) und FSP früh erwähnen.",
+    "Stellenbezeichnung „Klinik-Ziel (Klinikradar): Herzogin Elisabeth Hospital“ in Überschrift/Zusammenfassung der Bewerbung wörtlich aufnehmen.",
+    "Motivationssatz mit Bezug auf Herzogin Elisabeth Hospital und deren Schwerpunkt formulieren.",
+    "Keine Approbation erfinden; nicht als „approbierter Arzt“ bezeichnen."
+  ],
+  "job": {
+    "id": "klinikradar-160",
+    "title": "Klinik-Ziel (Klinikradar): Herzogin Elisabeth Hospital",
+    "employer": "Herzogin Elisabeth Hospital",
+    "location": "Braunschweig, Niedersachsen",
+    "city": "Braunschweig",
+    "bundesland": "Niedersachsen",
+    "url": "https://klinikradar.de/kliniken/herzogin-elisabeth-hospital",
+    "description": "Klinikradar-Klinik in Niedersachsen (orthopaedie). Adresse: 38124, Braunschweig. Kein einzelnes Stellenangebot — Karriere-/Kontaktseite prüfen auf Assistenzarzt / Berufserlaubnis / Geriatrie-Reha.",
+    "specializations": [
+      "orthopaedie"
+    ],
+    "source": "hano-jsonl:klinikradar",
+    "posted_date": null,
+    "requires_approbation": false,
+    "accepts_berufserlaubnis": true,
+    "raw": {
+      "plz": "38124",
+      "klinikradar": "160"
+    }
+  }
+}

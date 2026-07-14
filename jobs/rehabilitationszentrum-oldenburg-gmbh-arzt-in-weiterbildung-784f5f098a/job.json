@@ -1,0 +1,58 @@
+{
+  "score": 100,
+  "eligibility": "eligible",
+  "rationale": "Passend: Niedersachsen, Berufserlaubnis / Anerkennung-freundlich, geriatrie, geriatr, reha, rehabilitation",
+  "matched": [
+    "Niedersachsen",
+    "Berufserlaubnis / Anerkennung-freundlich",
+    "geriatrie",
+    "geriatr",
+    "reha",
+    "rehabilitation",
+    "innere",
+    "visite",
+    "weiterbildung",
+    "harz",
+    "Weiterbildung/Stationsarzt"
+  ],
+  "risks": [],
+  "gaps": [
+    "Im Anschreiben Berufserlaubnis (Restlaufzeit ~2 Jahre) und FSP früh erwähnen.",
+    "Anzeige wirkt facharztnah — prüfen, ob Assistenz-/Weiterbildungsstelle gemeint ist; sonst eher nicht bewerben.",
+    "Stellenbezeichnung „Arzt in Weiterbildung (w/m/d) Geriatrie / Reha Oldenburg“ in Überschrift/Zusammenfassung der Bewerbung wörtlich aufnehmen.",
+    "Motivationssatz mit Bezug auf Rehabilitationszentrum Oldenburg GmbH und deren Schwerpunkt formulieren.",
+    "Keine Approbation erfinden; nicht als „approbierter Arzt“ bezeichnen."
+  ],
+  "job": {
+    "id": "784f5f098a",
+    "title": "Arzt in Weiterbildung (w/m/d) Geriatrie / Reha Oldenburg",
+    "employer": "Rehabilitationszentrum Oldenburg GmbH",
+    "location": "Oldenburg, Niedersachsen",
+    "city": "Oldenburg",
+    "bundesland": "Niedersachsen",
+    "url": "https://www.arztjobs.de/oldenburg-oldb/innere-medizin/reha-zentrum-oldenburg-rehabilitationszentrum-oldenburg-gmbh/facharzt-arzt-in-weiterbildung-geriatrie",
+    "description": "Arzt in Weiterbildung Innere Medizin / Geriatrie in der Rehabilitation Oldenburg. Visiten, Medikamentenreview, geriatrische Untersuchung, Teambesprechungen. Weiterbildungsermächtigung Geriatrie. Junior-Pfad (AiW) — geeignet trotz Facharzt-Alternative in der Anzeige.",
+    "specializations": [
+      "reha_geriatrie",
+      "reha",
+      "innere"
+    ],
+    "source": "manual:arztjobs",
+    "posted_date": "2026-06-13",
+    "requires_approbation": false,
+    "accepts_berufserlaubnis": true,
+    "raw": {
+      "url": "https://www.arztjobs.de/oldenburg-oldb/innere-medizin/reha-zentrum-oldenburg-rehabilitationszentrum-oldenburg-gmbh/facharzt-arzt-in-weiterbildung-geriatrie",
+      "title": "Arzt in Weiterbildung (w/m/d) Geriatrie / Reha Oldenburg",
+      "employer": "Rehabilitationszentrum Oldenburg GmbH",
+      "city": "Oldenburg",
+      "bundesland": "Niedersachsen",
+      "location": "Oldenburg, Niedersachsen",
+      "posted_date": "2026-06-13",
+      "description": "Arzt in Weiterbildung Innere Medizin / Geriatrie in der Rehabilitation Oldenburg. Visiten, Medikamentenreview, geriatrische Untersuchung, Teambesprechungen. Weiterbildungsermächtigung Geriatrie. Junior-Pfad (AiW) — geeignet trotz Facharzt-Alternative in der Anzeige.",
+      "source": "manual:arztjobs",
+      "accepts_berufserlaubnis": true,
+      "active": true
+    }
+  }
+}
