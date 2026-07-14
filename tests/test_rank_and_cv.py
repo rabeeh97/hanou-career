@@ -11,6 +11,53 @@ from hanou_career.jobs.rank import rank_jobs
 from hanou_career.jobs.schema import RankedJob
 
 
+def test_rank_orders_by_score_descending() -> None:
+    candidate = {
+        "skills": ["Geriatrie"],
+        "specializations_tokens": ["geriatrie", "reha"],
+        "target_roles": ["Assistenzarzt Geriatrie"],
+        "preferred_regions": ["Niedersachsen"],
+        "licensing": {"approbation": False, "berufserlaubnis": True},
+    }
+    low = from_mapping(
+        {
+            "url": "https://example.test/low",
+            "title": "Assistenzarzt Innere Medizin",
+            "city": "Hannover",
+            "bundesland": "Niedersachsen",
+            "description": "Assistenzarzt Innere",
+            "source": "manual",
+            "posted_date": "2026-01-01",
+        }
+    )
+    high = from_mapping(
+        {
+            "url": "https://example.test/high",
+            "title": "Klinik-Ziel (Klinikradar): Rehaklinik Harz",
+            "city": "Bad Harzburg",
+            "bundesland": "Niedersachsen",
+            "description": "Geriatrie Reha Berufserlaubnis Assistenzarzt",
+            "source": "hano-jsonl:klinikradar",
+            "posted_date": "2026-01-02",
+        }
+    )
+    mid = from_mapping(
+        {
+            "url": "https://example.test/mid",
+            "title": "Assistenzarzt Geriatrie Reha",
+            "city": "Goslar",
+            "bundesland": "Niedersachsen",
+            "description": "Geriatrie Reha Berufserlaubnis Sonographie Visite",
+            "source": "manual",
+            "posted_date": "2026-01-03",
+        }
+    )
+    ranked = rank_jobs([low, high, mid], candidate=candidate, top_n=10)
+    scores = [r.score for r in ranked]
+    assert scores == sorted(scores, reverse=True)
+    assert ranked[0].score >= ranked[-1].score
+
+
 def test_rank_prefers_geriatrie_be() -> None:
     candidate = {
         "skills": ["Geriatrie", "Sonographie"],
@@ -98,3 +145,46 @@ def test_render_and_tailor(tmp_path: Path) -> None:
     assert "Geriatrie" in tailored["headline"] or "geriatr" in tailored["headline"].lower()
     gaps = analyze_gaps(ranked, {"licensing": {"approbation": False}})
     assert gaps
+
+
+def test_blocks_oberarzt_keeps_assistenz() -> None:
+    candidate = {
+        "skills": ["Geriatrie"],
+        "specializations_tokens": ["geriatrie"],
+        "target_roles": ["Assistenzarzt Geriatrie"],
+        "preferred_regions": ["Niedersachsen"],
+    }
+    aa = from_mapping(
+        {
+            "url": "https://example.test/aa",
+            "title": "Assistenzarzt Geriatrie",
+            "city": "Bad Harzburg",
+            "bundesland": "Niedersachsen",
+            "description": "Berufserlaubnis erwünscht Geriatrie Reha",
+        }
+    )
+    oa = from_mapping(
+        {
+            "url": "https://example.test/oa",
+            "title": "Oberarzt Geriatrie",
+            "city": "Hannover",
+            "bundesland": "Niedersachsen",
+            "description": "Geriatrie Reha",
+        }
+    )
+    fa = from_mapping(
+        {
+            "url": "https://example.test/fa",
+            "title": "Facharzt für Innere Medizin",
+            "city": "Göttingen",
+            "bundesland": "Niedersachsen",
+            "description": "Innere Medizin",
+        }
+    )
+    ranked = rank_jobs([aa, oa, fa], candidate=candidate, top_n=10)
+    titles = [r.job.title for r in ranked]
+    assert any("Assistenzarzt" in t for t in titles)
+    assert all("Oberarzt" not in t for t in titles)
+    assert all(not t.startswith("Facharzt") for t in titles)
+    scores = [r.score for r in ranked]
+    assert scores == sorted(scores, reverse=True)

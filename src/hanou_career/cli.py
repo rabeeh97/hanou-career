@@ -14,10 +14,13 @@ from hanou_career.config import OUTPUT_DIR, get_settings
 from hanou_career.cv.master import build_master_pdf, load_candidate, load_master_cv
 from hanou_career.cv.tailor import write_tailored_artifacts
 from hanou_career.jobs.cache import load_jobs, load_ranked, save_jobs, save_ranked
+from hanou_career.jobs.fresh_sources import fetch_live_clinic_jobs
+from hanou_career.jobs.freshness import filter_fresh
 from hanou_career.jobs.hano_db import fetch_hano_jobs
 from hanou_career.jobs.normalize import merge_jobs
 from hanou_career.jobs.online_search import fetch_online_jobs, load_manual_inbox
 from hanou_career.jobs.rank import rank_jobs
+from hanou_career.jobs.verify import filter_live_jobs
 from hanou_career.report.build_html import build_report
 
 app = typer.Typer(
@@ -33,19 +36,59 @@ RANKED_PATH = OUTPUT_DIR / "ranked.json"
 
 
 def do_ingest(*, skip_online: bool = False, skip_hano: bool = False) -> int:
+    settings = get_settings()
     jobs = []
+
+    console.print("[bold]Live clinic/ATS boards (Agaplesion, MediClin, …)…[/bold]")
+    jobs.extend(fetch_live_clinic_jobs())
+
     if not skip_hano:
-        console.print("[bold]Fetching Hano DB…[/bold]")
+        console.print("[bold]Fetching Hano DB / JSONL (non-stale sources)…[/bold]")
         jobs.extend(fetch_hano_jobs())
-    if not skip_online:
+
+    jobs.extend(load_manual_inbox())
+    if not skip_online and settings.hanou_include_arbeitsagentur:
         console.print("[bold]Online search (Arbeitsagentur)…[/bold]")
         jobs.extend(fetch_online_jobs())
-    else:
-        jobs.extend(load_manual_inbox())
+    elif not skip_online:
+        console.print(
+            "[yellow]Skipping Arbeitsagentur online search "
+            "(ghost 410 listings). Set HANOU_INCLUDE_ARBEITSAGENTUR=true to force.[/yellow]"
+        )
 
     merged = merge_jobs(jobs)
+    console.print(f"Merged raw pool: {len(merged)}")
+
+    before = len(merged)
+    merged = filter_fresh(
+        merged,
+        max_age_days=settings.hanou_max_age_days,
+        allow_missing_date=True,
+    )
+    console.print(
+        f"Freshness (≤{settings.hanou_max_age_days}d or undated live): "
+        f"{len(merged)} kept, {before - len(merged)} dropped by date"
+    )
+
+    if settings.hanou_verify_urls:
+        console.print("[bold]Verifying job URLs are still live…[/bold]")
+        # Always verify Arbeitsagentur — their search API returns many ghosts.
+        aa_urls = {
+            j.url for j in merged
+            if "arbeitsagentur" in j.source or "arbeitsagentur.de" in j.url
+        }
+        aa = [j for j in merged if j.url in aa_urls]
+        other = [j for j in merged if j.url not in aa_urls]
+        live_aa, dead_aa = filter_live_jobs(aa)
+        live_other, dead_other = filter_live_jobs(other)
+        merged = merge_jobs(live_aa + live_other)
+        console.print(
+            f"URL verify: kept {len(merged)} "
+            f"(dropped AA={dead_aa}, other={dead_other})"
+        )
+
     save_jobs(CACHE_PATH, merged)
-    console.print(f"[green]Saved {len(merged)} jobs → {CACHE_PATH}[/green]")
+    console.print(f"[green]Saved {len(merged)} live jobs → {CACHE_PATH}[/green]")
     return len(merged)
 
 
@@ -89,10 +132,25 @@ def do_tailor() -> int:
     candidate = load_candidate()
     master = load_master_cv()
     build_master_pdf()
+    keep_slugs = set()
     for r in ranked:
         job_dir = write_tailored_artifacts(r, candidate=candidate, master=master)
+        keep_slugs.add(job_dir.name)
         console.print(f"  · {job_dir.name}")
-    console.print(f"[green]Tailored {len(ranked)} job CVs under {OUTPUT_DIR / 'jobs'}[/green]")
+
+    jobs_root = OUTPUT_DIR / "jobs"
+    removed = 0
+    if jobs_root.is_dir():
+        import shutil
+
+        for path in jobs_root.iterdir():
+            if path.is_dir() and path.name not in keep_slugs:
+                shutil.rmtree(path, ignore_errors=True)
+                removed += 1
+    console.print(
+        f"[green]Tailored {len(ranked)} job CVs under {jobs_root} "
+        f"(removed {removed} outdated folders)[/green]"
+    )
     return len(ranked)
 
 
@@ -192,6 +250,28 @@ def serve_cmd(
     except KeyboardInterrupt:
         console.print("\nStopped.")
         server.server_close()
+
+
+@app.command("publish")
+def publish_cmd(
+    dry_run: bool = typer.Option(
+        False, "--dry-run", help="Stage files only; do not push to GitHub"
+    ),
+) -> None:
+    """Push output/ dashboard to GitHub Pages (gh-pages branch)."""
+    from hanou_career.report.publish_pages import publish_pages
+
+    try:
+        url = publish_pages(dry_run=dry_run)
+    except Exception as exc:  # noqa: BLE001
+        console.print(f"[red]Publish failed: {exc}[/red]")
+        raise typer.Exit(1) from exc
+    if dry_run:
+        console.print(f"[yellow]{url}[/yellow]")
+    else:
+        console.print(
+            f"[bold green]Published[/bold green] — live in ~1 minute at {url}"
+        )
 
 
 if __name__ == "__main__":

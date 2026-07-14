@@ -16,6 +16,14 @@ Live site: **https://rabeeh97.github.io/hanou-career/**
 
 Anyone with the link can browse recommendations, download CV PDFs, and open job ads (**Anzeige**). The site is public.
 
+Pushing code to `master` does **not** update the site (`output/` is local/gitignored). After regenerating the dashboard:
+
+```bash
+hanou-career publish
+```
+
+That force-pushes `output/` to the `gh-pages` branch; GitHub Pages rebuilds automatically within about a minute.
+
 ## Quick start
 
 ```bash
@@ -36,6 +44,10 @@ cp .env.example .env
 
 Jobs come from **Hano Postgres** (if Docker is up), else **`../Hano/var/*.jsonl`**, plus a live **Arbeitsagentur** search. Paste extra leads into `data/search_manual.jsonl`.
 
+## Freshness
+
+Ingest **verifies every job URL** and drops expired Arbeitsagentur ghosts (HTTP 410 / „nicht mehr verfügbar“). Prefer live ATS boards (Agaplesion Softgarden, MediClin, …). Set `HANOU_MAX_AGE_DAYS` (default 90) and `HANOU_VERIFY_URLS=true`.
+
 ## CLI
 
 | Command | Purpose |
@@ -47,6 +59,7 @@ Jobs come from **Hano Postgres** (if Docker is up), else **`../Hano/var/*.jsonl`
 | `hanou-career report` | Rebuild `output/index.html` + job notes pages |
 | `hanou-career run-all` | Full pipeline |
 | `hanou-career serve` | Serve the dashboard |
+| `hanou-career publish` | Push `output/` → GitHub Pages |
 
 ## Manual job inbox
 

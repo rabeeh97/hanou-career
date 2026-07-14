@@ -28,6 +28,11 @@ class Settings(BaseSettings):
     hanou_serve_host: str = "127.0.0.1"
     hanou_serve_port: int = 8765
     hanou_jsonl_limit: int = 5000
+    hanou_max_age_days: int = 90
+    hanou_verify_urls: bool = True
+    hanou_skip_stale_jsonl: bool = True
+    # Arbeitsagentur search currently returns many gone (410) links — off by default.
+    hanou_include_arbeitsagentur: bool = False
 
 
 @lru_cache

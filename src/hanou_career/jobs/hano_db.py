@@ -101,7 +101,7 @@ def _is_physicianish(row: dict[str, Any]) -> bool:
     return any(k in specs for k in ("geriatr", "reha", "innere", "orthop"))
 
 
-def _iter_job_jsonl_paths() -> list[Path]:
+def _iter_job_jsonl_paths(*, skip_stale_arbeitsagentur: bool = True) -> list[Path]:
     if not HANO_VAR.is_dir():
         return []
     found: dict[str, Path] = {}
@@ -111,6 +111,9 @@ def _iter_job_jsonl_paths() -> list[Path]:
             if any(s in name for s in SKIP_NAME_PARTS):
                 continue
             if "clinic" in name and "career-page-jobs" not in name:
+                continue
+            if skip_stale_arbeitsagentur and "arbeitsagentur" in name:
+                # BA search index is full of ghost 410 listings; prefer live ATS.
                 continue
             # Prefer -full over -dry / duplicates by stem family
             key = path.stem.replace("-full", "").replace("-extract", "").replace("-dry", "")
@@ -190,7 +193,9 @@ def fetch_hano_jsonl(*, limit: int | None = None) -> list[NormalizedJob]:
         return []
     jobs: list[NormalizedJob] = []
     per_source: dict[str, int] = {}
-    for path in _iter_job_jsonl_paths():
+    for path in _iter_job_jsonl_paths(
+        skip_stale_arbeitsagentur=get_settings().hanou_skip_stale_jsonl
+    ):
         src_count = 0
         try:
             for line in path.read_text(encoding="utf-8").splitlines():

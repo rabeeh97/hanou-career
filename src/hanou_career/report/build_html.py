@@ -28,6 +28,7 @@ def build_job_notes_html(ranked: RankedJob, gaps: list[str], job_dir: Path) -> s
     matched = ", ".join(html.escape(m) for m in ranked.matched) or "—"
     risks = ", ".join(html.escape(r) for r in ranked.risks) or "—"
     desc = html.escape((job.description or "")[:4000])
+    slug = html.escape(job.slug)
     return f"""<!DOCTYPE html>
 <html lang="de">
 <head>
@@ -36,12 +37,17 @@ def build_job_notes_html(ranked: RankedJob, gaps: list[str], job_dir: Path) -> s
   <title>{html.escape(job.title)} — Hanou Career</title>
   <link rel="stylesheet" href="../../assets/style.css"/>
 </head>
-<body>
+<body data-job-id="{slug}">
   <header class="top">
     <a href="../../index.html">← Alle Empfehlungen</a>
     <h1>{html.escape(job.title)}</h1>
     <p class="meta">{html.escape(job.employer or "—")} · {html.escape(job.location or "—")}</p>
-    <p>{_badge(ranked.eligibility)} <strong>Score {ranked.score}/100</strong></p>
+    <p>{_badge(ranked.eligibility)} <strong>Score {ranked.score}/100</strong>
+      <span class="read-pill" hidden>Gelesen</span></p>
+    <p class="actions">
+      <button type="button" class="btn ghost js-mark-read" data-job-id="{slug}">Als gelesen markieren</button>
+      <button type="button" class="btn ghost js-mark-unread" data-job-id="{slug}" hidden>Als ungelesen</button>
+    </p>
   </header>
   <main class="wrap">
     <section class="card">
@@ -69,29 +75,39 @@ def build_job_notes_html(ranked: RankedJob, gaps: list[str], job_dir: Path) -> s
       <p class="muted">Quelle: {html.escape(job.source)}</p>
     </section>
   </main>
+  <script src="../../assets/read-state.js" defer></script>
 </body>
 </html>
 """
 
 
 def build_index_html(ranked: list[RankedJob]) -> str:
+    from datetime import date
+
+    today = date.today().isoformat()
     cards: list[str] = []
     for r in ranked:
         job = r.job
-        href = f"jobs/{html.escape(job.slug)}/notes.html"
+        slug = html.escape(job.slug)
+        href = f"jobs/{slug}/notes.html"
         cards.append(
             f"""
-      <article class="job-card">
+      <article class="job-card" data-job-id="{slug}">
         <div class="score">{r.score}</div>
         <div class="body">
-          <h2><a href="{href}">{html.escape(job.title)}</a></h2>
+          <div class="card-head">
+            <h2><a href="{href}">{html.escape(job.title)}</a></h2>
+            <span class="read-pill" hidden>Gelesen</span>
+          </div>
           <p class="meta">{html.escape(job.employer or "—")} · {html.escape(job.location or "—")}</p>
           <p>{_badge(r.eligibility)} <span class="src">{html.escape(job.source)}</span></p>
           <p class="rationale">{html.escape(r.rationale)}</p>
           <p class="actions">
             <a class="btn" href="{href}">Details & Gaps</a>
-            <a class="btn ghost" href="jobs/{html.escape(job.slug)}/cv.pdf">CV PDF</a>
+            <a class="btn ghost" href="jobs/{slug}/cv.pdf">CV PDF</a>
             <a class="btn ghost" href="{html.escape(job.url)}" target="_blank" rel="noopener">Anzeige</a>
+            <button type="button" class="btn ghost js-mark-read" data-job-id="{slug}">Gelesen</button>
+            <button type="button" class="btn ghost js-mark-unread" data-job-id="{slug}" hidden>Ungelesen</button>
           </p>
         </div>
       </article>"""
@@ -109,21 +125,32 @@ def build_index_html(ranked: list[RankedJob]) -> str:
   <header class="hero">
     <p class="eyebrow">Hanou Career Coach</p>
     <h1>Mohammad Fares Hanou</h1>
-    <p class="lede">Nur Niedersachsen · Berufserlaubnis · Master- und Job-CVs · konkrete CV-Lücken</p>
+    <p class="lede">Nur Niedersachsen · live geprüfte Links · Berufserlaubnis · Master- & Job-CVs</p>
     <p class="actions hero-actions">
       <a class="btn" href="master_cv.pdf">Master-Lebenslauf</a>
       <a class="btn ghost" href="ranked.json">ranked.json</a>
     </p>
   </header>
   <main class="wrap">
-    <p class="count">{len(ranked)} Empfehlungen</p>
+    <div class="list-toolbar">
+      <p class="count" id="job-count">{len(ranked)} Empfehlungen · Stand {today} · nur noch erreichbare Anzeigen</p>
+      <div class="filter-bar" role="group" aria-label="Gelesen-Filter">
+        <button type="button" class="chip is-active" data-filter="unread">Ungelesen</button>
+        <button type="button" class="chip" data-filter="all">Alle</button>
+        <button type="button" class="chip" data-filter="read">Gelesen</button>
+        <button type="button" class="chip danger" id="clear-read">Gelesen zurücksetzen</button>
+      </div>
+      <p class="muted filter-hint">„Gelesen“ bleibt in diesem Browser (localStorage) — GitHub Pages speichert nichts serverseitig.</p>
+    </div>
     <div class="job-list">
       {cards_html}
     </div>
+    <p class="empty-filter" id="empty-filter" hidden>Keine Stellen in diesem Filter. Wechsle auf „Alle“ oder „Ungelesen“.</p>
   </main>
   <footer class="foot">
     <p>Keine Approbation · Berufserlaubnis vorhanden · FSP bestanden · Anerkennung läuft</p>
   </footer>
+  <script src="assets/read-state.js" defer></script>
 </body>
 </html>
 """
@@ -171,7 +198,44 @@ body {
 }
 .lede { color: var(--muted); max-width: 36rem; margin: 0 0 1.25rem; }
 .wrap { max-width: 920px; margin: 0 auto; padding: 0 1.5rem 3rem; }
-.count { color: var(--muted); font-size: 0.9rem; }
+.count { color: var(--muted); font-size: 0.9rem; margin: 0; }
+.list-toolbar { margin-bottom: 0.75rem; }
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.75rem 0 0.35rem;
+}
+.filter-hint { font-size: 0.8rem; margin: 0.35rem 0 0; }
+.chip {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  border-radius: 4px;
+  padding: 0.35rem 0.7rem;
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+.chip.is-active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: #e7f5f3;
+}
+.chip.danger { color: #8a3b2b; border-color: #e0b8ae; }
+.chip.danger:hover { background: #fceeed; }
+button.btn {
+  appearance: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+button.btn.ghost {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
 .job-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; }
 .job-card {
   display: grid;
@@ -181,6 +245,36 @@ body {
   border: 1px solid var(--line);
   border-radius: 6px;
   padding: 1rem 1.15rem;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+.job-card.is-read {
+  opacity: 0.55;
+  border-style: dashed;
+}
+.job-card.is-hidden { display: none; }
+.card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 0.75rem;
+  margin-bottom: 0.25rem;
+}
+.card-head h2 { margin: 0; flex: 1 1 auto; }
+.read-pill {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 0.12rem 0.4rem;
+}
+.empty-filter {
+  color: var(--muted);
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
 }
 .score {
   font-family: var(--display);
@@ -245,12 +339,166 @@ body {
 """
 
 
+READ_STATE_JS = r"""
+(function () {
+  var STORAGE_KEY = "hanou-career:readJobs:v1";
+  var FILTER_KEY = "hanou-career:readFilter:v1";
+
+  function loadRead() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      var arr = raw ? JSON.parse(raw) : [];
+      return new Set(Array.isArray(arr) ? arr : []);
+    } catch (e) {
+      return new Set();
+    }
+  }
+
+  function saveRead(set) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(set)));
+  }
+
+  function loadFilter() {
+    var v = localStorage.getItem(FILTER_KEY);
+    return v === "all" || v === "read" || v === "unread" ? v : "unread";
+  }
+
+  function saveFilter(v) {
+    localStorage.setItem(FILTER_KEY, v);
+  }
+
+  function setHidden(el, hidden) {
+    if (!el) return;
+    if (hidden) el.setAttribute("hidden", "");
+    else el.removeAttribute("hidden");
+  }
+
+  function refreshCard(card, readSet) {
+    var id = card.getAttribute("data-job-id");
+    var isRead = readSet.has(id);
+    card.classList.toggle("is-read", isRead);
+    var pill = card.querySelector(".read-pill");
+    setHidden(pill, !isRead);
+    setHidden(card.querySelector(".js-mark-read"), isRead);
+    setHidden(card.querySelector(".js-mark-unread"), !isRead);
+  }
+
+  function refreshNotesPage(readSet) {
+    var id = document.body.getAttribute("data-job-id");
+    if (!id) return;
+    var isRead = readSet.has(id);
+    document.body.classList.toggle("is-read", isRead);
+    setHidden(document.querySelector(".read-pill"), !isRead);
+    setHidden(document.querySelector(".js-mark-read"), isRead);
+    setHidden(document.querySelector(".js-mark-unread"), !isRead);
+  }
+
+  function applyFilter(filter, readSet) {
+    var cards = document.querySelectorAll(".job-card[data-job-id]");
+    var visible = 0;
+    cards.forEach(function (card) {
+      var id = card.getAttribute("data-job-id");
+      var isRead = readSet.has(id);
+      var show =
+        filter === "all" ||
+        (filter === "unread" && !isRead) ||
+        (filter === "read" && isRead);
+      card.classList.toggle("is-hidden", !show);
+      if (show) visible += 1;
+    });
+    var empty = document.getElementById("empty-filter");
+    setHidden(empty, visible !== 0 || cards.length === 0);
+    var count = document.getElementById("job-count");
+    if (count) {
+      var total = cards.length;
+      var unread = 0;
+      cards.forEach(function (c) {
+        if (!readSet.has(c.getAttribute("data-job-id"))) unread += 1;
+      });
+      var base = count.getAttribute("data-base") || count.textContent;
+      if (!count.getAttribute("data-base")) count.setAttribute("data-base", base);
+      count.textContent =
+        unread + " ungelesen · " + total + " gesamt · Filter: " +
+        (filter === "unread" ? "Ungelesen" : filter === "read" ? "Gelesen" : "Alle");
+    }
+    document.querySelectorAll("[data-filter]").forEach(function (btn) {
+      btn.classList.toggle("is-active", btn.getAttribute("data-filter") === filter);
+    });
+  }
+
+  function paint() {
+    var readSet = loadRead();
+    document.querySelectorAll(".job-card[data-job-id]").forEach(function (card) {
+      refreshCard(card, readSet);
+    });
+    refreshNotesPage(readSet);
+    if (document.querySelector(".job-list")) {
+      applyFilter(loadFilter(), readSet);
+    }
+  }
+
+  function mark(id, asRead) {
+    if (!id) return;
+    var readSet = loadRead();
+    if (asRead) readSet.add(id);
+    else readSet.delete(id);
+    saveRead(readSet);
+    paint();
+  }
+
+  document.addEventListener("click", function (ev) {
+    var t = ev.target;
+    if (!(t instanceof Element)) return;
+    var readBtn = t.closest(".js-mark-read");
+    if (readBtn) {
+      ev.preventDefault();
+      mark(readBtn.getAttribute("data-job-id"), true);
+      return;
+    }
+    var unreadBtn = t.closest(".js-mark-unread");
+    if (unreadBtn) {
+      ev.preventDefault();
+      mark(unreadBtn.getAttribute("data-job-id"), false);
+      return;
+    }
+    var filterBtn = t.closest("[data-filter]");
+    if (filterBtn) {
+      ev.preventDefault();
+      saveFilter(filterBtn.getAttribute("data-filter"));
+      paint();
+      return;
+    }
+    if (t.closest("#clear-read")) {
+      ev.preventDefault();
+      if (window.confirm("Alle Gelesen-Markierungen in diesem Browser löschen?")) {
+        localStorage.removeItem(STORAGE_KEY);
+        paint();
+      }
+    }
+  });
+
+  // Opening a job detail page counts as started review → mark read.
+  var detailId = document.body.getAttribute("data-job-id");
+  if (detailId) {
+    var readSet = loadRead();
+    if (!readSet.has(detailId)) {
+      readSet.add(detailId);
+      saveRead(readSet);
+    }
+  }
+
+  paint();
+})();
+"""
+
+
 def build_report(ranked: list[RankedJob], *, output_root: Path | None = None) -> Path:
     root = output_root or OUTPUT_DIR
     root.mkdir(parents=True, exist_ok=True)
     assets = root / "assets"
     assets.mkdir(exist_ok=True)
     (assets / "style.css").write_text(CSS, encoding="utf-8")
+    (assets / "read-state.js").write_text(READ_STATE_JS, encoding="utf-8")
 
     (root / "index.html").write_text(build_index_html(ranked), encoding="utf-8")
 

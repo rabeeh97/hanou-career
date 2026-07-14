@@ -69,13 +69,21 @@ NEGATIVE_SENIORITY = (
 
 NEGATIVE_NON_MD = (
     "pflegefachkraft",
+    "pflegefachkraft,",
     "altenpfleger",
     "physiotherapeut",
     "ergotherapeut",
     "logopäde",
     " MFA ",
+    "mfa ",
+    "teamassistenz",
     "medizinischer fachangestellter",
+    "medizinische fachangestellte",
     "krankenpfleger",
+    "sekretariat",
+    "operations-technische",
+    "ata ",
+    "ota ",
 )
 
 RECRUITER_HINTS = (
@@ -87,6 +95,37 @@ RECRUITER_HINTS = (
     "ärztevermittlung",
     "arztevermittlung",
 )
+
+
+
+def is_junior_clinical_role(title: str) -> bool:
+    """Keep Assistenzarzt / AiW / Hospitation; drop pure Facharzt/Oberarzt/Chefarzt."""
+    t = (title or "").lower()
+    if t.startswith("klinik-ziel"):
+        return True  # discovery leads
+    if any(k in t for k in ("oberarzt", "oberärztin", "chefarzt", "chefärztin")):
+        return "assistenz" in t
+    has_fach = ("facharzt" in t or "fachärztin" in t)
+    has_assistenz = "assistenz" in t
+    has_aiw = any(
+        k in t
+        for k in (
+            "arzt in weiterbildung",
+            "ärztin in weiterbildung",
+            "stationsarzt",
+            "stationsärztin",
+            "hospitat",
+        )
+    )
+    # "Zusatzweiterbildung" on a Facharzt job is still a Facharzt role.
+    has_wb = ("weiterbildung" in t and "zusatzweiterbildung" not in t and "zusatz-weiterbildung" not in t)
+    if has_fach and not (has_assistenz or has_aiw):
+        return False
+    if has_assistenz or has_aiw or (has_wb and not has_fach):
+        return True
+    if ("arzt" in t or "ärztin" in t) and not has_fach:
+        return True
+    return False
 
 
 def _tokenize(text: str) -> set[str]:
@@ -124,6 +163,21 @@ def rank_jobs(
         matched: list[str] = ["Niedersachsen"]
         risks: list[str] = []
         eligibility = "eligible"
+
+        if not is_junior_clinical_role(job.title):
+            ranked.append(
+                RankedJob(
+                    job=job,
+                    score=5,
+                    rationale="Zu fortgeschritten (Facharzt/Oberarzt/Chefarzt) — Zielprofil: Assistenzarzt/AiW.",
+                    matched=["Niedersachsen"],
+                    risks=[
+                        "Zu fortgeschritten (Facharzt/Oberarzt/Chefarzt) — Zielprofil: Assistenzarzt/AiW."
+                    ],
+                    eligibility="blocked",
+                )
+            )
+            continue
         if job.source.startswith("hano-jsonl:klinikradar") or job.title.startswith(
             "Klinik-Ziel"
         ):
@@ -145,7 +199,8 @@ def rank_jobs(
         elif job.accepts_berufserlaubnis:
             score += 22
             matched.append("Berufserlaubnis / Anerkennung-freundlich")
-            eligibility = "eligible"
+            if eligibility != "blocked":
+                eligibility = "eligible"
         elif "approbation" in blob and "berufserlaubnis" not in blob:
             eligibility = "risky"
             score -= 12
@@ -190,12 +245,23 @@ def rank_jobs(
 
         # Title preference
         title_l = job.title.lower()
+        if not any(
+            k in title_l
+            for k in ("arzt", "ärzt", "assistenz", "hospitat", "mediziner", "klinik-ziel")
+        ):
+            score -= 35
+            risks.append("Titel wirkt nicht ärztlich.")
+            eligibility = "blocked"
+
         if "assistenz" in title_l:
-            score += 10
+            score += 18
             matched.append("Assistenzarzt-Titel")
         if "hospitat" in title_l:
-            score += 6
+            score += 10
             matched.append("Hospitation")
+        if "weiterbildung" in title_l or "stationsarzt" in title_l:
+            score += 12
+            matched.append("Weiterbildung/Stationsarzt")
         if any(x in title_l for x in ("geriatr", "reha", "innere")):
             score += 8
         if "approbiert" in title_l and "berufserlaubnis" not in blob:
@@ -235,7 +301,13 @@ def rank_jobs(
             )
         )
 
-    ranked.sort(key=lambda r: (r.eligibility != "blocked", r.score), reverse=True)
+    def _posted_key(r: RankedJob) -> str:
+        return r.job.posted_date or ""
+
+    ranked.sort(
+        key=lambda r: (r.eligibility != "blocked", r.score, _posted_key(r)),
+        reverse=True,
+    )
     # Deduplicate near-identical recruiter clones (same title+city)
     deduped: list[RankedJob] = []
     seen_keys: set[str] = set()
@@ -260,14 +332,13 @@ def rank_jobs(
 
     concrete = [r for r in eligible if not _is_klinikradar(r)]
     leads = [r for r in eligible if _is_klinikradar(r)]
-    lead_slots = min(20, max(0, top_n // 5), len(leads))
+    lead_slots = min(10, max(0, top_n // 10), len(leads))
     concrete_slots = top_n - lead_slots
     selected = concrete[:concrete_slots] + leads[:lead_slots]
-    if len(selected) < top_n:
-        selected.extend(blocked[: top_n - len(selected)])
-    # Re-sort display: concrete jobs first by score, then klinikradar leads
+    # Never pad with blocked/non-MD roles — better show fewer live fits.
+    # Display order is always score descending (posted_date only as tiebreaker).
     selected.sort(
-        key=lambda r: (0 if _is_klinikradar(r) else 1, r.score),
+        key=lambda r: (r.score, _posted_key(r)),
         reverse=True,
     )
     return selected
