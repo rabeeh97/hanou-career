@@ -1,0 +1,72 @@
+full_name: Mohamad Fares Hanou
+email: mohamadhanou73@gmail.com
+phone: "+49 15739257493"
+street: Amsbergstraße 22
+plz: "38667"
+city: Bad Harzburg
+country: Deutschland
+birth_date: "1997-03-21"
+birth_place: Latakia, Syrien
+nationality: Syrisch
+
+licensing:
+  approbation: false
+  berufserlaubnis: true
+  berufserlaubnis_years_remaining: 2
+  anerkennung_status: in_progress
+  fachsprachpruefung: passed
+  fachsprachpruefung_date: "2025-02-13"
+  notes: >
+    Keine Approbation. Berufserlaubnis vorhanden (ca. 2 Jahre).
+    Anerkennung / Gleichwertigkeitsprüfung läuft.
+    Fachsprachprüfung (FSP) bestanden.
+
+target_roles:
+  - Assistenzarzt Geriatrie
+  - Assistenzarzt Innere Medizin
+  - Assistenzarzt geriatrische Rehabilitation
+  - Arzt mit Berufserlaubnis (klinisch)
+  - Weiterführende Hospitation / klinische Tätigkeit
+
+preferred_regions:
+  - Niedersachsen
+  - Bad Harzburg
+  - Harz
+  - Nordrhein-Westfalen
+
+skills:
+  - Geriatrie
+  - Geriatrische Rehabilitation
+  - Innere Medizin
+  - Anamneseerhebung
+  - Körperliche Untersuchung
+  - Patientenaufnahme und -entlassung
+  - Fachärztliche Visiten
+  - Abdomen-Sonographie (Grundkenntnisse)
+  - Herz-Sonographie (Grundkenntnisse)
+  - Venensonographie (Grundkenntnisse)
+  - Blutabnahme
+  - Periphere Venenkatheter
+  - Dokumentation
+  - Interdisziplinäre Teamarbeit
+  - Notfall- und Intensivmitarbeit (Syrien)
+
+languages:
+  - language: Deutsch
+    level: C1
+    note: Fachsprachprüfung bestanden (EUBIA / Feb 2025); Telc B2 (2024)
+  - language: Arabisch
+    level: Muttersprache
+  - language: Englisch
+    level: B2
+
+specializations_tokens:
+  - geriatrie
+  - reha
+  - rehabilitation
+  - innere
+  - orthopädie
+  - bewegungsapparat
+  - sonographie
+  - visite
+  - multimorbid

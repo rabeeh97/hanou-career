@@ -1,0 +1,84 @@
+# Canonical German Lebenslauf content for Mohamad Fares Hanou.
+# Edit freely; rebuild with: hanou-career build-master
+
+headline: Arzt mit Berufserlaubnis | Erfahrung in Geriatrie & geriatrischer Rehabilitation
+summary: >
+  Humanmediziner (M.D., Prädikat sehr gut) mit bestandener medizinischer Fachsprachprüfung
+  und gültiger Berufserlaubnis. Sechsmonatige Hospitation in der geriatrischen Rehabilitation
+  (Herzog-Julius-Klinik Bad Harzburg): Anamnese und Untersuchung unter Supervision,
+  fachärztliche Visiten, Aufnahme–Behandlung–Entlassung sowie Grundkenntnisse in
+  Abdomen-, Herz- und Venensonographie. Vorerfahrung als Assistenzarzt (Erkrankungen des
+  Bewegungsapparates / Innere Rotationen) in Syrien. Anerkennung in Deutschland läuft;
+  Approbation noch nicht erteilt. Suche Assistenzarzt- oder vergleichbare klinische Tätigkeit
+  mit Berufserlaubnis, idealerweise Geriatrie / Reha / Innere Medizin.
+
+contact:
+  name: Mohamad Fares Hanou
+  email: mohamadhanou73@gmail.com
+  phone: "+49 15739257493"
+  address: Amsbergstraße 22, 38667 Bad Harzburg, Deutschland
+  birth: "21.03.1997 in Latakia, Syrien"
+
+sections:
+  berufserfahrung:
+    - title: Hospitant (Geriatrische Rehabilitation)
+      employer: Herzog-Julius-Klinik – Michels Kliniken, Bad Harzburg
+      period: 11/2025 – 04/2026
+      bullets:
+        - "Sechsmonatige Hospitation in der Fachklinik für Geriatrische Rehabilitation (131 Betten)."
+        - "Selbstständige Anamneseerhebung und körperliche Untersuchung unter Supervision."
+        - "Regelmäßige Teilnahme an fachärztlichen Visiten; Mitwirkung bei Aufnahme, Behandlung und Entlassung."
+        - "Patienten mit chirurgisch-orthopädischen, kardiologischen oder zerebrovaskulären Erkrankungen, häufig multimorbid."
+        - "Erwerb von Grundkenntnissen in Abdomen-, Herz- und Venensonographie; Umgang mit EKG und klinischer Dokumentation."
+        - "Arbeit im interdisziplinären Team (Ärzte, Pflege, Therapie, Sozialdienst); positives Abschlusszeugnis der Chefärztin Geriatrie."
+
+    - title: Assistenzarzt – Erkrankungen des Bewegungsapparates
+      employer: Hamza-Nawfal Nationalkrankenhaus, Latakia, Syrien
+      period: 08/2022 – 01/2024
+      bullets:
+        - "Teilnahme an morgendlichen Visiten mit Fachärzten; vollständige Dokumentation."
+        - "Blutabnahmen und Anlage peripherer Venenkatheter."
+        - "Monatliche Rotationen: Rheumatologie, Kardiologie, Pneumologie, Neurologie, Gastroenterologie, Nephrologie."
+        - "Mitarbeit in Notaufnahme und Intensivstation; Entscheidungsfindung unter Zeitdruck."
+
+  ausbildung:
+    - title: Studium der Humanmedizin (M.D.)
+      employer: Universität Aleppo, Syrien
+      period: Abschluss 02/2022
+      bullets:
+        - "Diplom in Humanmedizin mit dem Prädikat sehr gut."
+
+    - title: Allgemeine Hochschulreife / Abitur
+      employer: Shukri Al-Hakim, Latakia, Syrien
+      period: "2015"
+      bullets:
+        - "Naturwissenschaftlicher Schwerpunkt (Biologie, Chemie, Physik)."
+
+  qualifikationen_lizenzen:
+    - title: Berufliche Qualifikation (Deutschland)
+      employer: ""
+      period: 2024 – 2025
+      bullets:
+        - "Medizinische Fachsprachprüfung bestanden (13.02.2025, EUBIA Institut Düsseldorf)."
+        - "Berufserlaubnis vorhanden (ca. 2 Jahre gültig); Anerkennung / Gleichwertigkeit in Bearbeitung."
+        - "Keine Approbation (noch ausstehend)."
+        - "Telc Deutsch B2 (13.06.2024); Goethe-Institut B1; B2-Kurs L.A.N.E.S (02–05/2024)."
+
+  sprachen:
+    - title: Sprachen
+      employer: ""
+      period: ""
+      bullets:
+        - "Deutsch – C1 (verhandlungssicher), Fachsprachprüfung bestanden"
+        - "Arabisch – Muttersprache"
+        - "Englisch – B2 (Lesen, Hören, Sprechen, Schreiben)"
+
+  kenntnisse:
+    - title: Klinische Schwerpunkte & Kenntnisse
+      employer: ""
+      period: ""
+      bullets:
+        - "Geriatrie / geriatrische Rehabilitation, Innere Medizin, Erkrankungen des Bewegungsapparates"
+        - "Anamnese, körperliche Untersuchung, Visite, Dokumentation"
+        - "Sonographie: Abdomen, Herz, Venen (Grundkenntnisse)"
+        - "Teamfähigkeit, Patienten- und Angehörigenkommunikation"
